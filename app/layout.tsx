@@ -19,6 +19,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={abcAreal.variable}>
       <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+              }
+              window.scrollTo(0, 0);
+            `,
+          }}
+        />
         <DirectionalHover />
         {children}
       </body>
