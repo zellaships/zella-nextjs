@@ -13,18 +13,21 @@ export default function DesignerPage() {
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
 
-  // DEBUG: Log scroll position changes
+  const [debugLog, setDebugLog] = useState<string[]>([]);
+
+  // DEBUG: Live overlay showing scroll events
   useEffect(() => {
+    const addLog = (msg: string) => {
+      setDebugLog(prev => [...prev.slice(-15), msg]);
+    };
+
     let lastScrollY = window.scrollY;
+    addLog(`INIT scrollY=${lastScrollY}`);
+
     const logScroll = () => {
       if (window.scrollY !== lastScrollY) {
-        console.log('SCROLL CHANGED:', {
-          from: lastScrollY,
-          to: window.scrollY,
-          activeElement: document.activeElement?.tagName + (document.activeElement?.id ? '#' + document.activeElement?.id : ''),
-          hash: location.hash,
-          topElement: document.elementFromPoint(window.innerWidth / 2, 100)?.className
-        });
+        const el = document.elementFromPoint(window.innerWidth / 2, 100);
+        addLog(`SCROLL ${lastScrollY}→${window.scrollY} | active=${document.activeElement?.tagName}${document.activeElement?.id ? '#'+document.activeElement.id : ''} | top=${el?.className?.slice(0,30)}`);
         lastScrollY = window.scrollY;
       }
     };
@@ -32,16 +35,14 @@ export default function DesignerPage() {
     // Intercept focus
     const origFocus = HTMLElement.prototype.focus;
     HTMLElement.prototype.focus = function(...args) {
-      console.log('FOCUS CALLED ON:', this.tagName, this.id, this.className);
-      console.trace();
+      addLog(`FOCUS: ${this.tagName} #${this.id} .${this.className?.slice(0,20)}`);
       return origFocus.apply(this, args);
     };
 
     // Intercept scrollIntoView
     const origScrollIntoView = Element.prototype.scrollIntoView;
     Element.prototype.scrollIntoView = function(...args) {
-      console.log('SCROLLINTOVIEW CALLED ON:', this.tagName, this.id, this.className);
-      console.trace();
+      addLog(`SCROLLINTOVIEW: ${this.tagName} #${this.id} .${this.className?.slice(0,20)}`);
       return origScrollIntoView.apply(this, args);
     };
 
@@ -163,6 +164,27 @@ export default function DesignerPage() {
 
   return (
     <>
+      {/* DEBUG OVERLAY */}
+      <div style={{
+        position: 'fixed',
+        top: 10,
+        right: 10,
+        background: 'rgba(0,0,0,0.9)',
+        color: '#0f0',
+        padding: 10,
+        fontSize: 11,
+        fontFamily: 'monospace',
+        zIndex: 99999,
+        maxWidth: 400,
+        maxHeight: 300,
+        overflow: 'auto',
+        borderRadius: 4
+      }}>
+        <div style={{fontWeight:'bold', marginBottom: 5}}>SCROLL DEBUG</div>
+        {debugLog.map((log, i) => (
+          <div key={i} style={{borderBottom: '1px solid #333', padding: '2px 0'}}>{log}</div>
+        ))}
+      </div>
       <TextGlowEffect />
       <SkipLink />
       <Header />
