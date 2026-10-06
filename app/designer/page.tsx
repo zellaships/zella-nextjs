@@ -12,8 +12,15 @@ export default function DesignerPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
+  const [showIframes, setShowIframes] = useState(false);
 
   const [debugLog, setDebugLog] = useState<string[]>([]);
+
+  // Delay iframe loading to prevent focus stealing on page load
+  useEffect(() => {
+    const timer = setTimeout(() => setShowIframes(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   // DEBUG: Live overlay showing scroll events
   useEffect(() => {
@@ -297,7 +304,7 @@ export default function DesignerPage() {
                   <div className="browser-url">blackveteransproject.org</div>
                 </div>
                 <div className="browser-viewport">
-                  <iframe src="https://www.blackveteransproject.org/" title="Black Veterans Project website" loading="lazy" tabIndex={-1} sandbox="allow-same-origin allow-scripts"></iframe>
+                  {showIframes && <iframe src="https://www.blackveteransproject.org/" title="Black Veterans Project website" loading="lazy" tabIndex={-1} sandbox="allow-same-origin allow-scripts"></iframe>}
                 </div>
               </a>
             </div>
@@ -320,7 +327,7 @@ export default function DesignerPage() {
                 <div className="browser-url">experimentalschoolforblackimagination.com</div>
               </div>
               <div className="browser-viewport">
-                <iframe src="https://experimentalschoolforblackimagination.com/" title="ESBI website" loading="lazy" tabIndex={-1} sandbox="allow-same-origin allow-scripts"></iframe>
+                {showIframes && <iframe src="https://experimentalschoolforblackimagination.com/" title="ESBI website" loading="lazy" tabIndex={-1} sandbox="allow-same-origin allow-scripts"></iframe>}
               </div>
             </div>
           </a>
