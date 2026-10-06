@@ -1,28 +1,31 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export function ScrollToTop() {
+  const pathname = usePathname();
+
   useEffect(() => {
     // Prevent browser scroll restoration
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
 
-    // Force scroll to top on mount
+    // Immediate scroll to top
     window.scrollTo(0, 0);
 
-    // Also scroll to top after everything loads
-    const handleLoad = () => {
-      window.scrollTo(0, 0);
-    };
-
-    window.addEventListener('load', handleLoad);
+    // Also scroll after a brief delay to catch any late-loading content
+    const timeout1 = setTimeout(() => window.scrollTo(0, 0), 50);
+    const timeout2 = setTimeout(() => window.scrollTo(0, 0), 150);
+    const timeout3 = setTimeout(() => window.scrollTo(0, 0), 300);
 
     return () => {
-      window.removeEventListener('load', handleLoad);
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+      clearTimeout(timeout3);
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
