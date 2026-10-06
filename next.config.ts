@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/zella-nextjs",
+  basePath: isProd ? "/zella-nextjs" : "",
+  assetPrefix: isProd ? "/zella-nextjs/" : "",
   images: {
     unoptimized: true,
   },
