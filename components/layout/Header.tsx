@@ -3,10 +3,15 @@
 import Link from 'next/link';
 
 export function Header() {
+  const handleNavClick = () => {
+    // Force scroll to top immediately on navigation
+    window.scrollTo(0, 0);
+  };
+
   return (
     <header className="site-header">
       <div className="wrap">
-        <Link className="wordmark" href="/">
+        <Link className="wordmark" href="/" onClick={handleNavClick}>
           <img src="/assets/images/zella-logo.png" alt="Zella" className="logo-img" />
         </Link>
         <button className="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -15,9 +20,9 @@ export function Header() {
           <span></span>
         </button>
         <nav className="doors">
-          <Link href="/">Home</Link>
-          <Link href="/artist">Art</Link>
-          <Link href="/designer">Design</Link>
+          <Link href="/" onClick={handleNavClick}>Home</Link>
+          <Link href="/artist" onClick={handleNavClick}>Art</Link>
+          <Link href="/designer" onClick={handleNavClick}>Design</Link>
         </nav>
       </div>
     </header>

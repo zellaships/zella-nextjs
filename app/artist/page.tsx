@@ -52,10 +52,10 @@ export default function ArtistPage() {
               <div className="cv-year-group">
                 <span className="cv-year-header">2026</span>
                 <ul className="cv-list cv-list-expanded">
-                  <li>BedStuy Art Club — Migrations, curated by Jenella Young</li>
                   <li>Flux Factory — A Thousand Answers, curated by Meghana Karnik</li>
                   <li>Lower Manhattan Cultural Council — Eat Slow Sketch Show, curated by Darla Migan</li>
                   <li>ArtCrawl Harlem — Water No Get Enemy, curated by Jomani Danielle</li>
+                  <li>BedStuy Art Club — Migrations, curated by Jenella Young</li>
                 </ul>
               </div>
               <div className="cv-year-group">

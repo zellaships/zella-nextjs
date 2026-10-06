@@ -60,9 +60,13 @@ export function Navigation() {
         navOverlay.addEventListener('click', handleOverlayClick);
       }
 
-      // Close nav when clicking a link
+      // Close nav when clicking a link and scroll to top
       nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', handleLinkClick);
+        link.addEventListener('click', (e) => {
+          handleLinkClick();
+          // Force scroll to top on navigation
+          window.scrollTo(0, 0);
+        });
       });
 
       // Close on escape key
