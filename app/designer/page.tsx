@@ -12,6 +12,11 @@ export default function DesignerPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
+  const [activePreviews, setActivePreviews] = useState<Set<string>>(new Set());
+
+  const activatePreview = (id: string) => {
+    setActivePreviews(prev => new Set(prev).add(id));
+  };
 
   // Check unlock status on mount
   useEffect(() => {
@@ -225,23 +230,31 @@ export default function DesignerPage() {
                 <a href="https://www.blackveteransproject.org/design-system" target="_blank" rel="noopener" className="cs-featured-link">View design system →</a>
               </div>
             </div>
-            <div className="cs-featured-preview">
-              <a href="https://www.blackveteransproject.org/" target="_blank" rel="noopener">
-                <div className="browser-chrome">
-                  <div className="browser-dots"><span></span><span></span><span></span></div>
-                  <div className="browser-url">blackveteransproject.org</div>
-                </div>
-                <div className="browser-viewport browser-viewport-static">
+            <div
+              className="cs-featured-preview"
+              onMouseEnter={() => activatePreview('bvp')}
+            >
+              <div className="browser-chrome">
+                <div className="browser-dots"><span></span><span></span><span></span></div>
+                <div className="browser-url">blackveteransproject.org</div>
+              </div>
+              <div className="browser-viewport browser-viewport-interactive">
+                {activePreviews.has('bvp') ? (
+                  <iframe
+                    src="https://www.blackveteransproject.org/"
+                    title="Black Veterans Project website"
+                    loading="eager"
+                  />
+                ) : (
                   <div className="site-preview-placeholder">
-                    <span className="site-preview-icon">↗</span>
-                    <span className="site-preview-label">Visit live site</span>
+                    <span className="site-preview-label">Hover to preview</span>
                   </div>
-                </div>
-              </a>
+                )}
+              </div>
             </div>
           </div>
 
-          <a className="cs-featured-card" href="https://experimentalschoolforblackimagination.com/" target="_blank" rel="noopener">
+          <div className="cs-featured-card">
             <div className="cs-featured-content">
               <ul className="cs-card-tags">
                 <li>Founding Organizer</li>
@@ -250,21 +263,33 @@ export default function DesignerPage() {
               </ul>
               <h2 className="cs-featured-title">Experimental School for Black Imagination</h2>
               <p className="cs-featured-desc">ESBI is a collective offering led by artists tending to the ways we come together to create, feel, and grow. As a founding organizer, I solo-built everything: brand identity, digital infrastructure, web design, and a lightweight design system with tokens that sync directly to code. The site holds the school&apos;s programs, a zine library, publications, and membership system—shipped iteratively as each program launched, then refined based on how our community actually used it.</p>
-              <span className="cs-featured-link">View live site →</span>
+              <div className="cs-featured-links">
+                <a href="https://experimentalschoolforblackimagination.com/" target="_blank" rel="noopener" className="cs-featured-link">View live site →</a>
+              </div>
             </div>
-            <div className="cs-featured-preview">
+            <div
+              className="cs-featured-preview"
+              onMouseEnter={() => activatePreview('esbi')}
+            >
               <div className="browser-chrome">
                 <div className="browser-dots"><span></span><span></span><span></span></div>
                 <div className="browser-url">experimentalschoolforblackimagination.com</div>
               </div>
-              <div className="browser-viewport browser-viewport-static">
-                <div className="site-preview-placeholder">
-                  <span className="site-preview-icon">↗</span>
-                  <span className="site-preview-label">Visit live site</span>
-                </div>
+              <div className="browser-viewport browser-viewport-interactive">
+                {activePreviews.has('esbi') ? (
+                  <iframe
+                    src="https://experimentalschoolforblackimagination.com/"
+                    title="ESBI website"
+                    loading="eager"
+                  />
+                ) : (
+                  <div className="site-preview-placeholder">
+                    <span className="site-preview-label">Hover to preview</span>
+                  </div>
+                )}
               </div>
             </div>
-          </a>
+          </div>
         </div>
 
         {/* Password Gate */}

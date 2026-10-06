@@ -1342,10 +1342,43 @@ nav.doors a[href="/"] {
   }
 }
 
-/* Static placeholder for browser viewport (replaces iframes) */
-.browser-viewport-static {
+/* Interactive browser viewport with hover-to-load iframe */
+.browser-viewport-interactive {
   cursor: pointer;
   background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  position: relative;
+}
+
+.browser-viewport-interactive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  width: 1440px;
+  height: 900px;
+  transform-origin: top left;
+  transform: scale(0.35);
+  pointer-events: auto;
+  cursor: default;
+}
+
+/* Scale iframe based on container width */
+@media (min-width: 480px) {
+  .browser-viewport-interactive iframe {
+    transform: scale(0.38);
+  }
+}
+
+@media (min-width: 768px) {
+  .browser-viewport-interactive iframe {
+    transform: scale(0.28);
+  }
+}
+
+@media (min-width: 1100px) {
+  .browser-viewport-interactive iframe {
+    transform: scale(0.32);
+  }
 }
 
 .site-preview-placeholder {
@@ -1356,28 +1389,19 @@ nav.doors a[href="/"] {
   align-items: center;
   justify-content: center;
   gap: var(--space-xs);
-  color: rgba(255, 255, 255, 0.7);
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.site-preview-icon {
-  font-size: var(--text-3xl);
-  line-height: 1;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s ease;
 }
 
 .site-preview-label {
-  font-size: var(--text-s);
+  font-size: var(--text-xs);
   font-variation-settings: 'MONO' var(--mono-semi);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.cs-featured-preview a:hover .site-preview-placeholder {
-  color: rgba(255, 255, 255, 1);
-}
-
-.cs-featured-preview a:hover .site-preview-icon {
-  transform: translate(2px, -2px);
+.cs-featured-preview:hover .site-preview-placeholder {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ---------- Case Study Grid ---------- */
