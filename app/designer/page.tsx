@@ -12,57 +12,6 @@ export default function DesignerPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
-  const [showIframes, setShowIframes] = useState(false);
-
-  const [debugLog, setDebugLog] = useState<string[]>([]);
-
-  // Delay iframe loading to prevent focus stealing on page load
-  useEffect(() => {
-    const timer = setTimeout(() => setShowIframes(true), 500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // DEBUG: Live overlay showing scroll events
-  useEffect(() => {
-    const addLog = (msg: string) => {
-      setDebugLog(prev => [...prev.slice(-15), msg]);
-    };
-
-    let lastScrollY = window.scrollY;
-    addLog(`INIT scrollY=${lastScrollY}`);
-
-    const logScroll = () => {
-      if (window.scrollY !== lastScrollY) {
-        const el = document.elementFromPoint(window.innerWidth / 2, 100);
-        addLog(`SCROLL ${lastScrollY}→${window.scrollY} | active=${document.activeElement?.tagName}${document.activeElement?.id ? '#'+document.activeElement.id : ''} | top=${el?.className?.slice(0,30)}`);
-        lastScrollY = window.scrollY;
-      }
-    };
-
-    // Intercept focus
-    const origFocus = HTMLElement.prototype.focus;
-    HTMLElement.prototype.focus = function(...args) {
-      addLog(`FOCUS: ${this.tagName} #${this.id} .${this.className?.slice(0,20)}`);
-      return origFocus.apply(this, args);
-    };
-
-    // Intercept scrollIntoView
-    const origScrollIntoView = Element.prototype.scrollIntoView;
-    Element.prototype.scrollIntoView = function(...args) {
-      addLog(`SCROLLINTOVIEW: ${this.tagName} #${this.id} .${this.className?.slice(0,20)}`);
-      return origScrollIntoView.apply(this, args);
-    };
-
-    const interval = setInterval(logScroll, 16);
-    window.addEventListener('scroll', logScroll);
-
-    return () => {
-      clearInterval(interval);
-      window.removeEventListener('scroll', logScroll);
-      HTMLElement.prototype.focus = origFocus;
-      Element.prototype.scrollIntoView = origScrollIntoView;
-    };
-  }, []);
 
   // Check unlock status on mount
   useEffect(() => {
@@ -171,27 +120,6 @@ export default function DesignerPage() {
 
   return (
     <>
-      {/* DEBUG OVERLAY */}
-      <div style={{
-        position: 'fixed',
-        top: 10,
-        right: 10,
-        background: 'rgba(0,0,0,0.9)',
-        color: '#0f0',
-        padding: 10,
-        fontSize: 11,
-        fontFamily: 'monospace',
-        zIndex: 99999,
-        maxWidth: 400,
-        maxHeight: 300,
-        overflow: 'auto',
-        borderRadius: 4
-      }}>
-        <div style={{fontWeight:'bold', marginBottom: 5}}>SCROLL DEBUG</div>
-        {debugLog.map((log, i) => (
-          <div key={i} style={{borderBottom: '1px solid #333', padding: '2px 0'}}>{log}</div>
-        ))}
-      </div>
       <TextGlowEffect />
       <SkipLink />
       <Header />
@@ -303,8 +231,11 @@ export default function DesignerPage() {
                   <div className="browser-dots"><span></span><span></span><span></span></div>
                   <div className="browser-url">blackveteransproject.org</div>
                 </div>
-                <div className="browser-viewport">
-                  {showIframes && <iframe src="https://www.blackveteransproject.org/" title="Black Veterans Project website" loading="lazy" tabIndex={-1} sandbox="allow-same-origin allow-scripts"></iframe>}
+                <div className="browser-viewport browser-viewport-static">
+                  <div className="site-preview-placeholder">
+                    <span className="site-preview-icon">↗</span>
+                    <span className="site-preview-label">Visit live site</span>
+                  </div>
                 </div>
               </a>
             </div>
@@ -326,8 +257,11 @@ export default function DesignerPage() {
                 <div className="browser-dots"><span></span><span></span><span></span></div>
                 <div className="browser-url">experimentalschoolforblackimagination.com</div>
               </div>
-              <div className="browser-viewport">
-                {showIframes && <iframe src="https://experimentalschoolforblackimagination.com/" title="ESBI website" loading="lazy" tabIndex={-1} sandbox="allow-same-origin allow-scripts"></iframe>}
+              <div className="browser-viewport browser-viewport-static">
+                <div className="site-preview-placeholder">
+                  <span className="site-preview-icon">↗</span>
+                  <span className="site-preview-label">Visit live site</span>
+                </div>
               </div>
             </div>
           </a>
