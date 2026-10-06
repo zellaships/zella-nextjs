@@ -1,0 +1,190 @@
+/* ============================================
+   Colophon — Raw, functional, no decoration
+   ============================================ */
+
+.colophon-main {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.colophon-title {
+  font-size: var(--text-3xl);
+  font-weight: 500;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-m);
+  border-bottom: 1px solid var(--ink);
+}
+
+.colophon-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .colophon-grid {
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+/* Left column */
+.colophon-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.colophon-block h2 {
+  font-size: 11px;
+  font-weight: 500;
+  font-variation-settings: 'MONO' 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.colophon-block p {
+  font-size: var(--text-base);
+  color: var(--ink);
+  margin: 0;
+}
+
+.colophon-block p.meta {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.colophon-block a {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.colophon-block a:hover {
+  color: var(--accent);
+}
+
+.colophon-block .mono {
+  font-variation-settings: 'MONO' 100;
+  font-size: 12px;
+}
+
+/* Right column */
+.colophon-specimens {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.specimen-block h2 {
+  font-size: 11px;
+  font-weight: 500;
+  font-variation-settings: 'MONO' 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  margin-bottom: var(--space-s);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink);
+}
+
+/* Type specimen */
+.specimen-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.specimen-row {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.specimen-label {
+  font-size: 11px;
+  font-variation-settings: 'MONO' 100;
+  color: var(--ink-soft);
+  width: 40px;
+  flex-shrink: 0;
+}
+
+.specimen-sample {
+  font-size: var(--text-l);
+  color: var(--ink);
+}
+
+.specimen-sans .specimen-sample {
+  font-variation-settings: 'MONO' 0;
+}
+
+.specimen-semi .specimen-sample {
+  font-variation-settings: 'MONO' 50;
+}
+
+.specimen-mono .specimen-sample {
+  font-variation-settings: 'MONO' 100;
+}
+
+/* Colors */
+.color-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.color-chip {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.color-chip.color-ink {
+  background: #17140F;
+}
+
+.color-chip.color-blurple {
+  background: #5865F2;
+}
+
+.color-chip.color-green {
+  background: #10B981;
+}
+
+.color-row span {
+  font-size: 13px;
+  font-variation-settings: 'MONO' 100;
+  color: var(--ink);
+}
+
+/* Scale */
+.scale-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scale-demo p {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.scale-demo .scale-4xl {
+  font-size: var(--text-4xl);
+}
+
+.scale-demo .scale-2xl {
+  font-size: var(--text-2xl);
+}
+
+.scale-demo .scale-l {
+  font-size: var(--text-l);
+}
+
+.scale-demo .scale-base {
+  font-size: var(--text-base);
+  font-weight: 400;
+}

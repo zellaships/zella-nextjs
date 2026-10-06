@@ -2164,6 +2164,55 @@ body.artist-page .wrap {
   color: var(--ink-soft);
 }
 
+/* Artist Statement */
+.artist-statement {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-m);
+  padding: var(--space-m) 0;
+  border-bottom: 1px solid var(--ink-faint);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .artist-statement {
+    grid-template-columns: 1fr 340px;
+    gap: var(--space-l);
+  }
+}
+
+.artist-statement-content p {
+  font-family: var(--font-body);
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--ink);
+  margin-bottom: var(--space-m);
+}
+
+.artist-statement-content p:last-child {
+  margin-bottom: 0;
+}
+
+.artist-statement-image {
+  order: -1;
+}
+
+@media (min-width: 900px) {
+  .artist-statement-image {
+    order: 0;
+  }
+}
+
+.artist-statement-image img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 4px;
+  box-shadow:
+    0 8px 32px -8px rgba(88, 101, 242, 0.4),
+    0 16px 48px -16px rgba(88, 101, 242, 0.3);
+}
+
 /* Artist CV section */
 .artist-cv {
   padding: var(--space-s) 0 var(--space-m);

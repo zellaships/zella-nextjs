@@ -45,6 +45,23 @@ export default function ArtistPage() {
           <h1>Art</h1>
         </section>
 
+        <section className="artist-statement">
+          <div className="artist-statement-content">
+            <p>
+              My work asks new questions about what it means to be free. Across performance, painting, zines, and installation, I make portals: spaces where Black queer people can see our beauty, our divinity, and the boundless worlds that have always been ours to take up spiritual residence in. I believe personal and collective imagination is a tool for liberation here and now. To feel joy, to love, to forgive, to conceptualize how to be free, I must first imagine that these ways of existing are attainable, and then build them into being. My imagination exists beyond the gender binary. It exists beyond sadness and suffering. Beyond imperial power.
+            </p>
+            <p>
+              My sources shift and overlap: lived experience, conversations with my community, archives, my reverence for the natural world, and traditional spirituality all move through the work. I paint in gouache, oil, acrylic, and mixed media, letting dense matte pigment carry history and luminous transparencies carry what is still arriving. In performance, I practice what I call circle work, improvised shared movement rooted in qigong and the ways Black folks move together. Starting from what we already know, we move between unison and divergence until improvisation opens into communion and, at times, transcendence.
+            </p>
+            <p>
+              Across every form, the work is a practice of recognition: we see each other and affirm that we are here, in this now and in every now that came before us. Each time we gather, that presence reaches forward.
+            </p>
+          </div>
+          <div className="artist-statement-image">
+            <img src="/assets/images/zella-studio.jpg" alt="Zella in studio" />
+          </div>
+        </section>
+
         <section className="artist-cv">
           <div className="cv-columns">
             <div className="cv-col">
@@ -141,7 +158,7 @@ export default function ArtistPage() {
                     </figcaption>
                   </figure>
                 </div>
-                <span className="art-row-label">Flyers</span>
+                <span className="art-row-label">Flyers and activations</span>
                 <div className="art-row">
                   <div className="art-item art-item--flyer">
                     <figure>
@@ -151,17 +168,6 @@ export default function ArtistPage() {
                       <figcaption>
                         <strong>DREAMKI</strong>
                         <span>Event flyer, MOTHERBOARD</span>
-                      </figcaption>
-                    </figure>
-                  </div>
-                  <div className="art-item art-item--flyer">
-                    <figure>
-                      <div className="art-frame-img" style={{backgroundImage: "url('/assets/images/art/placeholders/eternitys-pillar-flyer-placeholder.jpg')"}}>
-                        <img src="/assets/images/art/eternitys-pillar-flyer.jpg" alt="Eternity's Pillar event flyer" loading="lazy" />
-                      </div>
-                      <figcaption>
-                        <strong>Eternity's Pillar</strong>
-                        <span>Alice Coltrane screening flyer</span>
                       </figcaption>
                     </figure>
                   </div>
@@ -307,60 +313,29 @@ export default function ArtistPage() {
                     </figcaption>
                   </figure>
                 </div>
-                <div className="art-item art-item--medium">
-                  <figure>
-                    <div className="art-frame-img">
-                      <img src="/assets/images/art/IMG_8054.jpg" alt="Untitled" loading="lazy" />
-                    </div>
-                    <figcaption>
-                      <strong>Untitled</strong>
-                      <span>18×24 in, gouache, oil stick on paper</span>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div className="art-item art-item--medium">
-                  <figure>
-                    <div className="art-frame-img" style={{backgroundImage: "url('/assets/images/art/placeholders/IMG_7046-placeholder.jpg')"}}>
-                      <img src="/assets/images/art/IMG_7046.jpg" alt="Untitled" loading="lazy" />
-                    </div>
-                    <figcaption>
-                      <strong>Untitled</strong>
-                      <span>18×24 in, gouache, oil stick on paper</span>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div className="art-item art-item--medium art-item--align-right">
-                  <figure>
-                    <div className="art-frame-img" style={{backgroundImage: "url('/assets/images/art/placeholders/IMG_8684-placeholder.jpg')"}}>
-                      <img src="/assets/images/art/IMG_8684.jpg" alt="Untitled" loading="lazy" />
-                    </div>
-                    <figcaption>
-                      <strong>Untitled</strong>
-                      <span>18×24 in, gouache, oil stick on paper</span>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div className="art-item art-item--hero">
-                  <figure>
-                    <div className="art-frame-img">
-                      <img src="/assets/images/art/IMG_4897.jpg" alt="Untitled" loading="lazy" />
-                    </div>
-                    <figcaption>
-                      <strong>Untitled</strong>
-                      <span>60×48 in, oil, oil pastel, aerosol, gouache, 2024</span>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div className="art-item art-item--hero">
-                  <figure>
-                    <div className="art-frame-img">
-                      <img src="/assets/images/art/IMG_5898.jpg" alt="Untitled" loading="lazy" />
-                    </div>
-                    <figcaption>
-                      <strong>Untitled</strong>
-                      <span>60×48 in, oil, oil pastel, aerosol, gouache, 2024</span>
-                    </figcaption>
-                  </figure>
+                <div className="art-row art-row--centered">
+                  <div className="art-item art-item--medium">
+                    <figure>
+                      <div className="art-frame-img">
+                        <img src="/assets/images/art/IMG_8054.jpg" alt="Untitled" loading="lazy" />
+                      </div>
+                      <figcaption>
+                        <strong>Untitled</strong>
+                        <span>18×24 in, gouache, oil stick on paper</span>
+                      </figcaption>
+                    </figure>
+                  </div>
+                  <div className="art-item art-item--medium">
+                    <figure>
+                      <div className="art-frame-img" style={{backgroundImage: "url('/assets/images/art/placeholders/IMG_7046-placeholder.jpg')"}}>
+                        <img src="/assets/images/art/IMG_7046.jpg" alt="Untitled" loading="lazy" />
+                      </div>
+                      <figcaption>
+                        <strong>Untitled</strong>
+                        <span>18×24 in, gouache, oil stick on paper</span>
+                      </figcaption>
+                    </figure>
+                  </div>
                 </div>
                 <div className="art-item art-item--hero">
                   <figure>
@@ -373,14 +348,14 @@ export default function ArtistPage() {
                     </figcaption>
                   </figure>
                 </div>
-                <div className="art-item art-item--landscape-rotate">
+                <div className="art-item art-item--wide">
                   <figure>
                     <div className="art-frame-img">
                       <img src="/assets/images/art/IMG_7561.jpg" alt="Untitled" loading="lazy" />
                     </div>
                     <figcaption>
                       <strong>Untitled</strong>
-                      <span>51×97 in, oil, oil pastel, aerosol, gouache, acrylic, 2025</span>
+                      <span>51×97 in, oil, oil pastel, aerosol, gouache, acrylic</span>
                     </figcaption>
                   </figure>
                 </div>
@@ -492,6 +467,17 @@ export default function ArtistPage() {
               <div className="art-grid-scatter">
                 <div className="art-item art-item--hero">
                   <figure>
+                    <div className="art-frame-img">
+                      <img src="/assets/images/art/tempest.jpg" alt="Tempest" loading="lazy" />
+                    </div>
+                    <figcaption>
+                      <strong>Tempest</strong>
+                      <span>48×54 in, acrylic, aerosol spray, oil stick, holographic sticker</span>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div className="art-item art-item--hero">
+                  <figure>
                     <div className="art-frame-img" style={{backgroundImage: "url('/assets/images/art/placeholders/recruiters-bonus-placeholder.jpg')"}}>
                       <img src="/assets/images/art/recruiters-bonus.jpg" alt="Recruiter's Bonus" />
                     </div>
@@ -545,7 +531,7 @@ export default function ArtistPage() {
                     </figcaption>
                   </figure>
                 </div>
-                <span className="art-row-label">Flyers</span>
+                <span className="art-row-label">Flyers and activations</span>
                 <div className="art-row">
                   <div className="art-item art-item--flyer">
                     <a href="https://www.fluxfactory.org/black-bliss-rave/" target="_blank" rel="noopener">
@@ -567,6 +553,17 @@ export default function ArtistPage() {
             <section className="art-year-section" id="y2021" data-year-section>
               <span className="year-label">2021</span>
               <div className="art-grid-scatter">
+                <div className="art-item art-item--hero">
+                  <figure>
+                    <div className="art-frame-img">
+                      <img src="/assets/images/art/gangstas-paradise.jpg" alt="Gangsta's Paradise" loading="lazy" />
+                    </div>
+                    <figcaption>
+                      <strong>Gangsta's Paradise</strong>
+                      <span>36×48 in, acrylic, oil stick, gesso, and aerosol on stretched canvas</span>
+                    </figcaption>
+                  </figure>
+                </div>
                 <div className="art-item art-item--hero">
                   <figure>
                     <div className="art-frame-img" style={{backgroundImage: "url('/assets/images/art/placeholders/a-queer-ass-black-ass-picnic-placeholder.jpg')"}}>
