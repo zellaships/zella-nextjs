@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { DirectionalHover } from "@/components/effects/DirectionalHover";
+import { ScrollToTop } from "@/components/utils/ScrollToTop";
 
 const abcAreal = localFont({
   src: "../public/assets/fonts/ABCArealSuperfamilyVariable.woff2",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={abcAreal.variable}>
       <body>
+        <ScrollToTop />
         <DirectionalHover />
         {children}
       </body>
