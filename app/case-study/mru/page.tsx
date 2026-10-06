@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SkipLink } from '@/components/layout/SkipLink';
+import { TextGlowEffect } from '@/components/effects/TextGlowEffect';
 import { Navigation } from '@/components/layout/Navigation';
 
 
@@ -9,6 +10,7 @@ export default function MRUCaseStudy() {
   return (
     <>
       
+      <TextGlowEffect />
       <SkipLink />
 
       <Header />
