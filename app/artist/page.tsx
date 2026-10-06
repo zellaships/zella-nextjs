@@ -3,7 +3,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SkipLink } from '@/components/layout/SkipLink';
 import { Navigation } from '@/components/layout/Navigation';
-import { TextGlowEffect } from '@/components/effects/TextGlowEffect';
+
 import { YearNav } from '@/components/artist/YearNav';
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export default function ArtistPage() {
   return (
     <>
-      <TextGlowEffect />
+      
       <SkipLink />
       <Header />
       <Navigation />

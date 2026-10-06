@@ -6,7 +6,6 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SkipLink } from '@/components/layout/SkipLink';
 import { Navigation } from '@/components/layout/Navigation';
-import { TextGlowEffect } from '@/components/effects/TextGlowEffect';
 
 export default function DesignerPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
@@ -120,7 +119,6 @@ export default function DesignerPage() {
 
   return (
     <>
-      <TextGlowEffect />
       <SkipLink />
       <Header />
       <Navigation />

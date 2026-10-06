@@ -3,12 +3,12 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SkipLink } from '@/components/layout/SkipLink';
 import { Navigation } from '@/components/layout/Navigation';
-import { TextGlowEffect } from '@/components/effects/TextGlowEffect';
+
 
 export default function CZICaseStudy() {
   return (
     <div className="case-study">
-      <TextGlowEffect />
+      
       <SkipLink />
 
       <Header />
