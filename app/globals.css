@@ -1216,6 +1216,26 @@ nav.doors a[href="/"] {
   height: fit-content;
 }
 
+.cs-featured-preview-link {
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.cs-featured-preview-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+.cs-featured-preview-link:hover .site-preview-placeholder {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.cs-featured-preview-link:hover .site-preview-placeholder svg {
+  transform: translate(2px, -2px);
+  transition: transform 0.2s ease;
+}
+
 .browser-chrome {
   display: flex;
   align-items: center;
@@ -1357,27 +1377,27 @@ nav.doors a[href="/"] {
   width: 1440px;
   height: 900px;
   transform-origin: top left;
-  transform: scale(0.35);
+  transform: scale(0.22);
   pointer-events: auto;
   cursor: default;
 }
 
-/* Scale iframe based on container width */
+/* Scale iframe to fit container - calculate based on container width / 1440 */
 @media (min-width: 480px) {
   .browser-viewport-interactive iframe {
-    transform: scale(0.38);
+    transform: scale(0.24);
   }
 }
 
 @media (min-width: 768px) {
   .browser-viewport-interactive iframe {
-    transform: scale(0.28);
+    transform: scale(0.26);
   }
 }
 
 @media (min-width: 1100px) {
   .browser-viewport-interactive iframe {
-    transform: scale(0.32);
+    transform: scale(0.30);
   }
 }
 
@@ -2343,6 +2363,23 @@ body.artist-page .wrap {
 }
 
 /* HERO - full width, dramatic scale */
+/* WIDE - slightly less than full width, no crop */
+.art-item--wide {
+  grid-column: 1 / -1;
+}
+
+.art-item--wide .art-frame-img {
+  width: 90%;
+  max-width: 1000px;
+  aspect-ratio: auto;
+}
+
+.art-item--wide .art-frame-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .art-item--hero {
   grid-column: 1 / -1;
 }
@@ -2428,7 +2465,7 @@ body.artist-page .wrap {
   width: 100%;
 }
 
-/* Cyanotype - on left */
+/* Cyanotype - larger, spans 2 columns on desktop */
 .art-item--cyanotype {
   grid-column: span 1;
 }
@@ -2437,19 +2474,19 @@ body.artist-page .wrap {
   width: 100%;
 }
 
-/* Poster - wider than cyanotype, spans 2 columns on desktop */
+@media (min-width: 1000px) {
+  .art-item--cyanotype {
+    grid-column: span 2;
+  }
+}
+
+/* Poster - smaller, 1 column */
 .art-item--poster {
   grid-column: span 1;
 }
 
 .art-item--poster .art-frame-img {
   width: 100%;
-}
-
-@media (min-width: 1000px) {
-  .art-item--poster {
-    grid-column: span 2;
-  }
 }
 
 /* Align item to right column (3rd) */
@@ -2494,6 +2531,15 @@ body.artist-page .wrap {
   justify-content: flex-start;
 }
 
+.art-row--centered {
+  justify-content: center;
+}
+
+.art-row--centered .art-item--medium {
+  flex: 0 0 calc((100% - 2 * var(--space-m)) / 3);
+  max-width: calc((100% - 2 * var(--space-m)) / 3);
+}
+
 .art-row-label {
   grid-column: 1 / -1;
   font-size: var(--text-2xs);
@@ -2507,9 +2553,9 @@ body.artist-page .wrap {
 }
 
 .art-row .art-item--flyer {
-  flex: 1 1 auto;
-  min-width: 280px;
-  max-width: 400px;
+  flex: 1 1 calc((100% - 2 * var(--space-m)) / 3);
+  min-width: 180px;
+  max-width: calc((100% - 2 * var(--space-m)) / 3);
 }
 
 .art-row .art-item--zine {
@@ -2526,16 +2572,17 @@ body.artist-page .wrap {
 
 @media (max-width: 768px) {
   .art-row .art-item--flyer {
-    min-width: 220px;
-    max-width: 320px;
+    flex: 1 1 calc((100% - 2 * var(--space-s)) / 3);
+    min-width: 150px;
+    max-width: calc((100% - 2 * var(--space-s)) / 3);
   }
 }
 
 @media (max-width: 600px) {
   .art-row .art-item--flyer {
-    min-width: 160px;
+    flex: 1 1 calc((100% - var(--space-s)) / 2);
+    min-width: 140px;
     max-width: none;
-    flex: 1 1 45%;
   }
   .art-row {
     gap: var(--space-s);
@@ -3336,7 +3383,7 @@ body.case-study-ipg .cs-hero-image img {
   overflow: hidden;
   position: relative;
   cursor: grab;
-  border-radius: 8px;
+  border-radius: 0 0 8px 8px;
 }
 
 .browser-viewport:active {

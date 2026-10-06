@@ -12,11 +12,6 @@ export default function DesignerPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
-  const [activePreviews, setActivePreviews] = useState<Set<string>>(new Set());
-
-  const activatePreview = (id: string) => {
-    setActivePreviews(prev => new Set(prev).add(id));
-  };
 
   // Check unlock status on mount
   useEffect(() => {
@@ -175,8 +170,9 @@ export default function DesignerPage() {
               <span className="exp-org">SYPartners</span>
             </div>
             <div className="exp-item">
-              <span className="exp-date">2013–Now</span>
-              <span className="exp-role">Independent Design Strategist</span>
+              <span className="exp-date">2013–16</span>
+              <span className="exp-role">Freelance Designer</span>
+              <span className="exp-org">Pfizer, Poker Central, Creative Good</span>
             </div>
             <div className="exp-item">
               <span className="exp-date">2006–10</span>
@@ -230,26 +226,17 @@ export default function DesignerPage() {
                 <a href="https://www.blackveteransproject.org/design-system" target="_blank" rel="noopener" className="cs-featured-link">View design system →</a>
               </div>
             </div>
-            <div
-              className="cs-featured-preview"
-              onMouseEnter={() => activatePreview('bvp')}
-            >
+            <div className="cs-featured-preview">
               <div className="browser-chrome">
                 <div className="browser-dots"><span></span><span></span><span></span></div>
                 <div className="browser-url">blackveteransproject.org</div>
               </div>
               <div className="browser-viewport browser-viewport-interactive">
-                {activePreviews.has('bvp') ? (
-                  <iframe
-                    src="https://www.blackveteransproject.org/"
-                    title="Black Veterans Project website"
-                    loading="eager"
-                  />
-                ) : (
-                  <div className="site-preview-placeholder">
-                    <span className="site-preview-label">Hover to preview</span>
-                  </div>
-                )}
+                <iframe
+                  src="https://www.blackveteransproject.org/"
+                  title="Black Veterans Project website"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
@@ -267,26 +254,17 @@ export default function DesignerPage() {
                 <a href="https://experimentalschoolforblackimagination.com/" target="_blank" rel="noopener" className="cs-featured-link">View live site →</a>
               </div>
             </div>
-            <div
-              className="cs-featured-preview"
-              onMouseEnter={() => activatePreview('esbi')}
-            >
+            <div className="cs-featured-preview">
               <div className="browser-chrome">
                 <div className="browser-dots"><span></span><span></span><span></span></div>
                 <div className="browser-url">experimentalschoolforblackimagination.com</div>
               </div>
               <div className="browser-viewport browser-viewport-interactive">
-                {activePreviews.has('esbi') ? (
-                  <iframe
-                    src="https://experimentalschoolforblackimagination.com/"
-                    title="ESBI website"
-                    loading="eager"
-                  />
-                ) : (
-                  <div className="site-preview-placeholder">
-                    <span className="site-preview-label">Hover to preview</span>
-                  </div>
-                )}
+                <iframe
+                  src="https://experimentalschoolforblackimagination.com/"
+                  title="ESBI website"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
