@@ -230,7 +230,7 @@ export default function DesignerPage() {
                   <div className="browser-url">blackveteransproject.org</div>
                 </div>
                 <div className="browser-viewport">
-                  <iframe src="https://www.blackveteransproject.org/" title="Black Veterans Project website" loading="lazy" tabIndex={-1} sandbox="allow-scripts allow-same-origin"></iframe>
+                  <iframe src="https://www.blackveteransproject.org/" title="Black Veterans Project website" loading="lazy" tabIndex={-1}></iframe>
                 </div>
               </a>
             </div>
@@ -253,7 +253,7 @@ export default function DesignerPage() {
                 <div className="browser-url">experimentalschoolforblackimagination.com</div>
               </div>
               <div className="browser-viewport">
-                <iframe src="https://experimentalschoolforblackimagination.com/" title="ESBI website" loading="lazy" tabIndex={-1} sandbox="allow-scripts allow-same-origin"></iframe>
+                <iframe src="https://experimentalschoolforblackimagination.com/" title="ESBI website" loading="lazy" tabIndex={-1}></iframe>
               </div>
             </div>
           </a>
