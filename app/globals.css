@@ -1319,6 +1319,8 @@ nav.doors a[href="/"] {
   /* Mobile first: scale to fill container width */
   transform: scale(0.55);
   pointer-events: none;
+  /* Disable scroll animation from .browser-viewport iframe */
+  animation: none;
 }
 
 /* Scale up as viewport gets larger */
