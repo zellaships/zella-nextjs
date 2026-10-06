@@ -13,12 +13,47 @@ export default function DesignerPage() {
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
 
-  // Force scroll to top on mount
+  // DEBUG: Log scroll position changes
   useEffect(() => {
-    window.scrollTo(0, 0);
-    // Also reset after a short delay to catch any late scroll restoration
-    const timeout = setTimeout(() => window.scrollTo(0, 0), 50);
-    return () => clearTimeout(timeout);
+    let lastScrollY = window.scrollY;
+    const logScroll = () => {
+      if (window.scrollY !== lastScrollY) {
+        console.log('SCROLL CHANGED:', {
+          from: lastScrollY,
+          to: window.scrollY,
+          activeElement: document.activeElement?.tagName + (document.activeElement?.id ? '#' + document.activeElement?.id : ''),
+          hash: location.hash,
+          topElement: document.elementFromPoint(window.innerWidth / 2, 100)?.className
+        });
+        lastScrollY = window.scrollY;
+      }
+    };
+
+    // Intercept focus
+    const origFocus = HTMLElement.prototype.focus;
+    HTMLElement.prototype.focus = function(...args) {
+      console.log('FOCUS CALLED ON:', this.tagName, this.id, this.className);
+      console.trace();
+      return origFocus.apply(this, args);
+    };
+
+    // Intercept scrollIntoView
+    const origScrollIntoView = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function(...args) {
+      console.log('SCROLLINTOVIEW CALLED ON:', this.tagName, this.id, this.className);
+      console.trace();
+      return origScrollIntoView.apply(this, args);
+    };
+
+    const interval = setInterval(logScroll, 16);
+    window.addEventListener('scroll', logScroll);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('scroll', logScroll);
+      HTMLElement.prototype.focus = origFocus;
+      Element.prototype.scrollIntoView = origScrollIntoView;
+    };
   }, []);
 
   // Check unlock status on mount
@@ -240,7 +275,7 @@ export default function DesignerPage() {
                   <div className="browser-url">blackveteransproject.org</div>
                 </div>
                 <div className="browser-viewport">
-                  {/* iframe temporarily disabled for scroll debugging */}
+                  <iframe src="https://www.blackveteransproject.org/" title="Black Veterans Project website" loading="lazy" tabIndex={-1}></iframe>
                 </div>
               </a>
             </div>
@@ -263,7 +298,7 @@ export default function DesignerPage() {
                 <div className="browser-url">experimentalschoolforblackimagination.com</div>
               </div>
               <div className="browser-viewport">
-                {/* iframe temporarily disabled for scroll debugging */}
+                <iframe src="https://experimentalschoolforblackimagination.com/" title="ESBI website" loading="lazy" tabIndex={-1}></iframe>
               </div>
             </div>
           </a>
