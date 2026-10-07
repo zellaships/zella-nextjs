@@ -11,6 +11,7 @@ import { TextGlowEffect } from '@/components/effects/TextGlowEffect';
 export default function DesignerPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
+  const [isSafari, setIsSafari] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
 
@@ -32,6 +33,12 @@ export default function DesignerPage() {
     if (checkUnlocked()) {
       setIsUnlocked(true);
     }
+
+    // Detect Safari - iframes don't load properly in Safari due to privacy restrictions
+    const ua = navigator.userAgent;
+    const isSafariBrowser = /Safari/.test(ua) && !/Chrome/.test(ua) && !/Chromium/.test(ua);
+    setIsSafari(isSafariBrowser);
+
     // Mark as hydrated AFTER checking - cards won't render until this is true
     setIsHydrated(true);
   }, []);
@@ -236,11 +243,18 @@ export default function DesignerPage() {
                 <div className="browser-url">blackveteransproject.org</div>
               </div>
               <div className="browser-viewport browser-viewport-interactive">
-                <iframe
-                  src="https://www.blackveteransproject.org/"
-                  title="Black Veterans Project website preview"
-                  tabIndex={-1}
-                />
+                {isSafari ? (
+                  <div className="safari-preview-placeholder">
+                    <span>Interactive preview unavailable in Safari</span>
+                    <a href="https://www.blackveteransproject.org/" target="_blank" rel="noopener">View live site →</a>
+                  </div>
+                ) : (
+                  <iframe
+                    src="https://www.blackveteransproject.org/"
+                    title="Black Veterans Project website preview"
+                    tabIndex={-1}
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -264,11 +278,18 @@ export default function DesignerPage() {
                 <div className="browser-url">experimentalschoolforblackimagination.com</div>
               </div>
               <div className="browser-viewport browser-viewport-interactive">
-                <iframe
-                  src="https://experimentalschoolforblackimagination.com/"
-                  title="Experimental School for Black Imagination website preview"
-                  tabIndex={-1}
-                />
+                {isSafari ? (
+                  <div className="safari-preview-placeholder">
+                    <span>Interactive preview unavailable in Safari</span>
+                    <a href="https://experimentalschoolforblackimagination.com/" target="_blank" rel="noopener">View live site →</a>
+                  </div>
+                ) : (
+                  <iframe
+                    src="https://experimentalschoolforblackimagination.com/"
+                    title="Experimental School for Black Imagination website preview"
+                    tabIndex={-1}
+                  />
+                )}
               </div>
             </div>
           </div>
