@@ -52,7 +52,12 @@ export function Header() {
           <Link className="wordmark" href="/" onClick={closeNav}>
             <img src="/assets/images/zella-logo.png" alt="Zella" className="logo-img" />
           </Link>
-          <nav className={`doors${isNavOpen ? ' open' : ''}`}>
+          <nav
+            className={`doors${isNavOpen ? ' open' : ''}`}
+            style={{
+              zIndex: isNavOpen ? 2147483646 : undefined,
+            }}
+          >
             <Link href="/" scroll={true} onClick={closeNav}>Home</Link>
             <Link href="/artist" scroll={true} onClick={closeNav}>Art</Link>
             <Link href="/designer" scroll={true} onClick={closeNav}>Design</Link>
@@ -65,7 +70,15 @@ export function Header() {
         className={`nav-toggle${isNavOpen ? ' active' : ''}`}
         aria-label="Toggle navigation"
         aria-expanded={isNavOpen}
-        onClick={() => {
+        style={{
+          position: 'fixed',
+          zIndex: 2147483647,
+          pointerEvents: 'auto',
+          isolation: 'isolate',
+        }}
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
           console.log('Hamburger clicked!');
           toggleNav();
         }}
@@ -79,6 +92,9 @@ export function Header() {
         className={`nav-overlay${isNavOpen ? ' open' : ''}`}
         aria-hidden="true"
         onClick={closeNav}
+        style={{
+          zIndex: isNavOpen ? 2147483645 : -1,
+        }}
       />
     </>
   );
