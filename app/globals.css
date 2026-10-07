@@ -1569,6 +1569,14 @@ nav.doors a[href="/"] {
   top: -65%;
 }
 
+/* CZI card - mobile needs more aggressive offset */
+@media (max-width: 768px) {
+  .cs-card[href="/case-study/czi"] .cs-card-image .scroll-img {
+    top: -40%;
+    object-position: center 30%;
+  }
+}
+
 /* MRU card - shift up to center key info */
 .cs-card[href="/case-study/mru"] .cs-card-image img {
   object-position: center 35%;
