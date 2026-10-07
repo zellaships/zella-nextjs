@@ -13,16 +13,17 @@ export default function DesignerPage() {
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
 
-  // Check unlock status on mount
+  // Check unlock status on mount - defaults to locked, only unlocks with valid token
   useEffect(() => {
     const checkUnlocked = () => {
-      const stored = localStorage.getItem('zv_ax');
-      if (!stored) return false;
       try {
+        const stored = localStorage.getItem('zv_ax');
+        if (!stored) return false;
         const data = JSON.parse(stored);
         const sessionToken = generateSessionToken();
         return data.v === 1 && data.t === sessionToken;
       } catch {
+        // Any error (missing localStorage, parse error, etc.) keeps locked
         return false;
       }
     };
