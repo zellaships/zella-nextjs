@@ -155,7 +155,7 @@ export default function DesignerPage() {
               Before that, I spent three years as a staff product designer at a major edtech platform, moving between building 0-1 product experiences and the strategy that shaped them, plus a year leading two design teams as a manager, working across large cross-functional teams on products used by thousands of K-12 educators, students, and school leaders.
             </p>
             <p>
-              My T-shape as a designer spans hands-on product and interaction design, visual language, to product management, to the strategic layer, helping teams navigate complexity, align on vision, and ship meaningful experiences across software, digital transformation, and narrative design.
+              My T-shape as a designer spans hands-on product and interaction design, visual language, to product management, to the strategic layer, helping teams navigate complexity, align on vision, and ship meaningful experiences across software and strategic storytelling.
             </p>
             <p>
               I&apos;ve also designed curriculum and taught interaction design at NYU and California College of the Arts.

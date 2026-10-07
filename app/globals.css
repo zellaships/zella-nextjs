@@ -1568,13 +1568,20 @@ nav.doors a[href="/"] {
   }
 }
 
-/* CZI card - skip whitespace at top of image */
+/* CZI card - tighter aspect ratio to reduce bottom whitespace */
+.cs-card[href="/case-study/czi"] .cs-card-image {
+  aspect-ratio: 16 / 8;
+}
+
 .cs-card[href="/case-study/czi"] .cs-card-image .scroll-img {
   top: -65%;
 }
 
-/* CZI card - mobile needs more aggressive offset */
+/* CZI card - mobile needs more aggressive offset and tighter ratio */
 @media (max-width: 768px) {
+  .cs-card[href="/case-study/czi"] .cs-card-image {
+    aspect-ratio: 16 / 7;
+  }
   .cs-card[href="/case-study/czi"] .cs-card-image .scroll-img {
     top: -40%;
     object-position: center 30%;
