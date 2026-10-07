@@ -183,7 +183,7 @@ export default function DesignerPage() {
             <div className="exp-item">
               <span className="exp-date">2013–16</span>
               <span className="exp-role">Freelance Designer</span>
-              <span className="exp-org">Pfizer, Poker Central, Creative Good</span>
+              <span className="exp-org">Pfizer, US Green Building Council, HIAS, Poker Central, Creative Good</span>
             </div>
             <div className="exp-item">
               <span className="exp-date">2006–10</span>
