@@ -1550,12 +1550,11 @@ nav.doors a[href="/"] {
 
 /* CZI card - crop whitespace at top, show dashboard content */
 .cs-card[href="/case-study/czi"] .cs-card-image img {
-  object-position: top left;
   object-fit: cover;
-  transform: translateY(-8%);
+  object-position: center 75%;
 }
 .cs-card[href="/case-study/czi"]:hover .cs-card-image img {
-  transform: translateY(-8%) scale(1.04);
+  transform: scale(1.04);
 }
 
 /* MRU card - shift up to center key info */
