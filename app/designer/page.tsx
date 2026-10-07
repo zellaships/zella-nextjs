@@ -13,37 +13,6 @@ export default function DesignerPage() {
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
 
-  // DEBUG: Isolate iframe scroll mechanism
-  useEffect(() => {
-    const timestamp = () => `[${(performance.now() / 1000).toFixed(3)}s]`;
-
-    // Log scroll events
-    const onScroll = () => {
-      console.log(`${timestamp()} SCROLL EVENT - scrollY: ${window.scrollY}, activeElement: ${document.activeElement?.tagName}`);
-    };
-
-    // Log focus events
-    const onFocus = (e: FocusEvent) => {
-      console.log(`${timestamp()} FOCUS EVENT - target: ${(e.target as HTMLElement)?.tagName}, activeElement: ${document.activeElement?.tagName}`);
-    };
-
-    const onFocusIn = (e: FocusEvent) => {
-      console.log(`${timestamp()} FOCUSIN EVENT - target: ${(e.target as HTMLElement)?.tagName}, scrollY: ${window.scrollY}`);
-    };
-
-    window.addEventListener('scroll', onScroll);
-    window.addEventListener('focus', onFocus, true);
-    window.addEventListener('focusin', onFocusIn, true);
-
-    console.log(`${timestamp()} PAGE MOUNT - scrollY: ${window.scrollY}`);
-
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('focus', onFocus, true);
-      window.removeEventListener('focusin', onFocusIn, true);
-    };
-  }, []);
-
   // Check unlock status on mount
   useEffect(() => {
     const checkUnlocked = () => {
@@ -265,9 +234,9 @@ export default function DesignerPage() {
               <div className="browser-viewport browser-viewport-interactive">
                 <iframe
                   src="https://www.blackveteransproject.org/"
-                  title="Black Veterans Project website"
+                  title="Black Veterans Project website preview"
                   tabIndex={-1}
-                  onLoad={() => console.log(`[${(performance.now() / 1000).toFixed(3)}s] BVP IFRAME LOADED - scrollY: ${window.scrollY}, activeElement: ${document.activeElement?.tagName}`)}
+                  sandbox="allow-scripts"
                 />
               </div>
             </div>
@@ -292,14 +261,12 @@ export default function DesignerPage() {
                 <div className="browser-url">experimentalschoolforblackimagination.com</div>
               </div>
               <div className="browser-viewport browser-viewport-interactive">
-                {/* DISABLED FOR TESTING - uncomment to test ESBI iframe
                 <iframe
                   src="https://experimentalschoolforblackimagination.com/"
-                  title="ESBI website"
+                  title="Experimental School for Black Imagination website preview"
                   tabIndex={-1}
-                  onLoad={() => console.log(`[${(performance.now() / 1000).toFixed(3)}s] ESBI IFRAME LOADED - scrollY: ${window.scrollY}, activeElement: ${document.activeElement?.tagName}`)}
+                  sandbox="allow-scripts"
                 />
-                */}
               </div>
             </div>
           </div>
