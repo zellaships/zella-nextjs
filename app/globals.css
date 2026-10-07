@@ -2964,14 +2964,21 @@ body.case-study main {
   margin-bottom: 0;
 }
 
-body.case-study .cs-explore--brutalist {
-  margin-bottom: 0;
-  padding-bottom: var(--space-l);
+body.case-study main.wrap {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  overflow-x: visible;
 }
 
-body.case-study main.wrap {
-  padding-bottom: 0;
-  overflow-x: visible; /* Allow full-bleed sections to extend beyond wrap */
+/* Remove gap above cs-explore by pulling into previous section's margin */
+body.case-study .cs-section-block + .cs-explore--brutalist {
+  margin-top: calc(-1 * var(--space-xl));
+  padding-top: var(--space-2xl);
+}
+
+body.case-study .cs-explore--brutalist {
+  margin-bottom: 0;
+  padding-bottom: var(--space-xl);
 }
 
 
@@ -4085,9 +4092,10 @@ body.case-study .cs-embed-full {
 .cs-explore--brutalist {
   position: relative;
   color: #fff;
-  margin: 0;
-  margin-left: calc(-50vw + 50%);
-  padding: var(--space-xl) 0 0;
+  /* Override base .cs-explore margins */
+  margin: 0 !important;
+  margin-left: calc(-50vw + 50%) !important;
+  padding: var(--space-xl) 0 var(--space-xl);
   /* Full-bleed: extend to viewport edges */
   width: 100vw;
   background: #10B981;
