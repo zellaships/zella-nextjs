@@ -359,6 +359,7 @@ nav.doors a.active::after {
   margin: 5px 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform-origin: center;
+  pointer-events: none;
 }
 
 .nav-toggle.active span:nth-child(1) {
@@ -1565,7 +1566,7 @@ nav.doors a[href="/"] {
 
 /* CZI card - skip whitespace at top of image */
 .cs-card[href="/case-study/czi"] .cs-card-image .scroll-img {
-  top: -58%;
+  top: -65%;
 }
 
 /* MRU card - shift up to center key info */
