@@ -375,35 +375,35 @@ export default function CZICaseStudy() {
           </p>
         </section>
 
-        <section className="cs-explore cs-explore--brutalist">
-          <span className="cs-explore-label">Other Case Studies</span>
-          <div className="cs-explore-strip">
-            <a className="cs-explore-item" href="/case-study/along">
-              <h3 className="cs-explore-title">Along Mentoring Tool</h3>
-              <p className="cs-explore-excerpt">Designing a relationship-building tool that helps teachers and students connect through structured reflection prompts.</p>
-            </a>
-            <a className="cs-explore-item" href="/case-study/mru">
-              <h3 className="cs-explore-title">Mediation Response Unit</h3>
-              <p className="cs-explore-excerpt">Designing a national toolkit to help communities respond to conflict with mediation instead of police.</p>
-            </a>
-            <a className="cs-explore-item" href="/case-study/ipg">
-              <h3 className="cs-explore-title">Interpublic Group</h3>
-              <p className="cs-explore-excerpt">Bringing collective intelligence to executive decision-making at a global advertising holding company operating in over 130 countries.</p>
-            </a>
-            <a className="cs-explore-item" href="/case-study/xq">
-              <h3 className="cs-explore-title">XQ Institute</h3>
-              <p className="cs-explore-excerpt">Architecting a national movement to rethink America's high schools. 26 million viewers, 2x supporter growth overnight.</p>
-            </a>
-          </div>
-          <div className="cs-explore-back">
-            <a href="/designer">
-              <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5H13M13 5L9 1M13 5L9 9" stroke="currentColor" strokeWidth="1.3"/></svg>
-              Back to Design
-            </a>
-          </div>
-        </section>
-
       </main>
+
+      <section className="cs-explore cs-explore--brutalist">
+        <span className="cs-explore-label">Other Case Studies</span>
+        <div className="cs-explore-strip">
+          <a className="cs-explore-item" href="/case-study/along">
+            <h3 className="cs-explore-title">Along Mentoring Tool</h3>
+            <p className="cs-explore-excerpt">Designing a relationship-building tool that helps teachers and students connect through structured reflection prompts.</p>
+          </a>
+          <a className="cs-explore-item" href="/case-study/mru">
+            <h3 className="cs-explore-title">Mediation Response Unit</h3>
+            <p className="cs-explore-excerpt">Designing a national toolkit to help communities respond to conflict with mediation instead of police.</p>
+          </a>
+          <a className="cs-explore-item" href="/case-study/ipg">
+            <h3 className="cs-explore-title">Interpublic Group</h3>
+            <p className="cs-explore-excerpt">Bringing collective intelligence to executive decision-making at a global advertising holding company operating in over 130 countries.</p>
+          </a>
+          <a className="cs-explore-item" href="/case-study/xq">
+            <h3 className="cs-explore-title">XQ Institute</h3>
+            <p className="cs-explore-excerpt">Architecting a national movement to rethink America's high schools. 26 million viewers, 2x supporter growth overnight.</p>
+          </a>
+        </div>
+        <div className="cs-explore-back">
+          <a href="/designer">
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5H13M13 5L9 1M13 5L9 9" stroke="currentColor" strokeWidth="1.3"/></svg>
+            Back to Design
+          </a>
+        </div>
+      </section>
 
       <Footer />
     </div>

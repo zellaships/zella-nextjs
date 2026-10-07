@@ -2971,15 +2971,10 @@ body.artist-page .wrap {
   overflow-x: visible;
 }
 
-/* Remove gap above cs-explore by pulling into previous section's margin */
-.case-study .cs-section-block + .cs-explore--brutalist {
-  margin-top: calc(-1 * var(--space-xl));
-  padding-top: var(--space-2xl);
-}
-
-.case-study .cs-explore--brutalist {
+/* cs-explore is now outside main.wrap, directly after </main> */
+.cs-explore--brutalist {
+  margin-top: 0;
   margin-bottom: 0;
-  padding-bottom: var(--space-xl);
 }
 
 
@@ -4093,12 +4088,10 @@ html:has(.case-study) {
 .cs-explore--brutalist {
   position: relative;
   color: #fff;
-  /* Override base .cs-explore margins */
-  margin: 0 !important;
-  margin-left: calc(-50vw + 50%) !important;
-  padding: var(--space-xl) 0 var(--space-xl);
-  /* Full-bleed: extend to viewport edges */
-  width: 100vw;
+  /* Section is outside main.wrap - naturally full-width */
+  margin: 0;
+  padding: var(--space-xl) 0;
+  width: 100%;
   background: #10B981;
 }
 
