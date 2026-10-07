@@ -1334,14 +1334,14 @@ nav.doors a[href="/"] {
   top: 0;
   left: 0;
   border: none;
-  width: 1440px;
-  height: 1600px;
+  width: 2200px;
+  height: 2400px;
   transform-origin: top left;
   pointer-events: none;
   animation: none;
 }
 
-/* Container query based scaling - show more of site by scaling down further */
+/* Container query based scaling - iframe fills container, shows more content */
 @container (min-width: 0px) {
   .cs-featured-preview .browser-viewport iframe {
     transform: scale(calc(100cqw / 2200));
@@ -1363,14 +1363,14 @@ nav.doors a[href="/"] {
   top: 0;
   left: 0;
   border: none;
-  width: 1440px;
-  height: 1200px;
+  width: 2200px;
+  height: 2000px;
   transform-origin: top left;
   pointer-events: auto;
   cursor: default;
 }
 
-/* Container query based scaling - show more of site */
+/* Container query based scaling - iframe fills container, shows more content */
 @container (min-width: 0px) {
   .browser-viewport-interactive iframe {
     transform: scale(calc(100cqw / 2200));
