@@ -13,7 +13,7 @@ export default function DesignerPage() {
   const [isHydrated, setIsHydrated] = useState(false);
   const [isSafari, setIsSafari] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
-  const [showError, setShowError] = useState(false);
+  const [formState, setFormState] = useState<'idle' | 'error' | 'success'>('idle');
 
   // Check unlock status on mount - defaults to locked, only unlocks with valid token
   useEffect(() => {
@@ -80,13 +80,17 @@ export default function DesignerPage() {
       const sessionToken = generateSessionToken();
       localStorage.setItem('zv_ax', JSON.stringify({ v: 1, t: sessionToken }));
 
-      setIsUnlocked(true);
+      setFormState('success');
       setPasswordInput('');
-      setShowError(false);
+      // Brief success state before unlocking
+      setTimeout(() => {
+        setIsUnlocked(true);
+        setFormState('idle');
+      }, 600);
     } else {
-      setShowError(true);
+      setFormState('error');
       setPasswordInput('');
-      setTimeout(() => setShowError(false), 1600);
+      setTimeout(() => setFormState('idle'), 1600);
     }
   };
 
@@ -296,23 +300,35 @@ export default function DesignerPage() {
         {/* Password Gate */}
         <div className="cs-gate-box" id="csGateSection">
           <span className="cs-gate-label">My other past work is password protected. <a href="mailto:zellavanie@gmail.com?subject=Portfolio%20request%20%F0%9F%91%80" className="cs-gate-link">Reach out</a> if you&apos;d like to see it.</span>
-          <form className="cs-gate-form-inline" id="csGateForm" onSubmit={handlePasswordSubmit}>
+          <form
+            className={`cs-gate-form-inline${formState === 'error' ? ' cs-gate-error' : ''}${formState === 'success' ? ' cs-gate-success' : ''}`}
+            id="csGateForm"
+            onSubmit={handlePasswordSubmit}
+          >
             <input
               type="password"
               id="csPassword"
-              placeholder="Password"
+              placeholder={formState === 'error' ? 'Try again' : formState === 'success' ? 'Unlocked!' : 'Password'}
               autoComplete="off"
               spellCheck={false}
               value={passwordInput}
-              onChange={(e) => setPasswordInput(e.target.value)}
+              onChange={(e) => {
+                setPasswordInput(e.target.value);
+                if (formState !== 'idle') setFormState('idle');
+              }}
             />
             <button type="submit" aria-label="Submit">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+              {formState === 'success' ? (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12l5 5L20 7"/>
+                </svg>
+              ) : (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              )}
             </button>
           </form>
-          {showError && <span className="cs-gate-error" id="csGateError">Incorrect password</span>}
         </div>
 
         {/* Placeholder cards (visible before unlock, only after hydration) */}

@@ -4696,27 +4696,36 @@ input:focus-visible {
   animation: shake 0.35s ease;
 }
 
-/* Error state - red placeholder */
-.cs-gate-form-inline.error input::placeholder {
+/* Error state - red border, placeholder, and button */
+.cs-gate-form-inline.cs-gate-error {
+  border-color: #DC2626;
+  animation: shake 0.35s ease;
+}
+
+.cs-gate-form-inline.cs-gate-error input::placeholder {
   color: #DC2626;
   opacity: 1;
 }
 
-.cs-gate-form-inline.error {
-  border-color: #DC2626;
-}
-
-/* Success state - green placeholder */
-.cs-gate-form-inline.success {
-  animation: pulse-success 0.4s ease;
-  border-color: var(--green);
-}
-
-.cs-gate-form-inline.success input::placeholder {
-  color: var(--green);
+.cs-gate-form-inline.cs-gate-error button {
+  color: #DC2626;
   opacity: 1;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+}
+
+/* Success state - green border, placeholder, and button */
+.cs-gate-form-inline.cs-gate-success {
+  border-color: #10B981;
+  animation: pulse-success 0.4s ease;
+}
+
+.cs-gate-form-inline.cs-gate-success input::placeholder {
+  color: #10B981;
+  opacity: 1;
+}
+
+.cs-gate-form-inline.cs-gate-success button {
+  color: #10B981;
+  opacity: 1;
 }
 
 @keyframes pulse-success {
