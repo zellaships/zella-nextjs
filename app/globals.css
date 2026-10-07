@@ -4085,11 +4085,11 @@ body.case-study .cs-embed-full {
 .cs-explore--brutalist {
   position: relative;
   color: #fff;
-  margin: var(--space-xl) 0 0;
+  margin: 0;
+  margin-left: calc(-50vw + 50%);
   padding: var(--space-xl) 0 0;
   /* Full-bleed: extend to viewport edges */
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
   background: #10B981;
 }
 
