@@ -1341,10 +1341,10 @@ nav.doors a[href="/"] {
   animation: none;
 }
 
-/* Container query based scaling - perfect fit at any container width */
+/* Container query based scaling - show more of site by scaling down further */
 @container (min-width: 0px) {
   .cs-featured-preview .browser-viewport iframe {
-    transform: scale(calc(100cqw / 1440));
+    transform: scale(calc(100cqw / 2200));
   }
 }
 
@@ -1370,11 +1370,10 @@ nav.doors a[href="/"] {
   cursor: default;
 }
 
-/* Container query based scaling for perfect fit at any size */
+/* Container query based scaling - show more of site */
 @container (min-width: 0px) {
   .browser-viewport-interactive iframe {
-    /* Scale = container width / 1440 */
-    transform: scale(calc(100cqw / 1440));
+    transform: scale(calc(100cqw / 2200));
   }
 }
 
@@ -1564,15 +1563,14 @@ nav.doors a[href="/"] {
   object-position: center 35%;
 }
 
-/* IPG card - fit entire phone, white background */
+/* IPG card - scale down phone to fit, white background */
 .cs-card[href="/case-study/ipg"] .cs-card-image {
   background: #fff;
-  aspect-ratio: 4 / 5;
 }
 .cs-card[href="/case-study/ipg"] .cs-card-image img {
   object-fit: contain;
   object-position: center center;
-  padding: var(--space-s);
+  transform: scale(0.75);
 }
 
 /* XQ card - center the covers */
