@@ -4700,10 +4700,6 @@ input:focus-visible {
 .cs-gate-form-inline.cs-gate-error {
   border-color: #DC2626;
   animation: shake 0.35s ease;
-  background: rgba(220, 38, 38, 0.08);
-  border-radius: 4px;
-  padding: var(--space-xs) var(--space-sm);
-  margin: -var(--space-xs) calc(-1 * var(--space-sm));
 }
 
 .cs-gate-form-inline.cs-gate-error input {
