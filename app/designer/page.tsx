@@ -35,8 +35,9 @@ export default function DesignerPage() {
     }
 
     // Detect Safari - iframes don't load properly in Safari due to privacy restrictions
+    // CriOS = Chrome on iOS, FxiOS = Firefox on iOS, EdgiOS = Edge on iOS
     const ua = navigator.userAgent;
-    const isSafariBrowser = /Safari/.test(ua) && !/Chrome/.test(ua) && !/Chromium/.test(ua);
+    const isSafariBrowser = /Safari/.test(ua) && !/Chrome/.test(ua) && !/Chromium/.test(ua) && !/CriOS/.test(ua) && !/FxiOS/.test(ua) && !/EdgiOS/.test(ua);
     setIsSafari(isSafariBrowser);
 
     // Mark as hydrated AFTER checking - cards won't render until this is true
