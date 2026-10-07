@@ -103,7 +103,7 @@ export function ScatterHeading({ children, className = '' }: ScatterHeadingProps
   }, [children]);
 
   return (
-    <h2 ref={containerRef} className={className}>
+    <h2 ref={containerRef} className={`${className} scatter-container`}>
       {children}
     </h2>
   );
