@@ -13,10 +13,30 @@ export default function DesignerPage() {
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
 
-  // Scroll to top on mount
+  // DEBUG: Track scroll position changes
   useEffect(() => {
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
+    console.log('[SCROLL DEBUG] Mount - scrollY:', window.scrollY);
+    console.log('[SCROLL DEBUG] activeElement:', document.activeElement?.tagName, document.activeElement);
+
+    requestAnimationFrame(() => {
+      console.log('[SCROLL DEBUG] rAF - scrollY:', window.scrollY);
+    });
+
+    setTimeout(() => {
+      console.log('[SCROLL DEBUG] 0ms - scrollY:', window.scrollY, 'activeElement:', document.activeElement?.tagName);
+    }, 0);
+
+    setTimeout(() => {
+      console.log('[SCROLL DEBUG] 100ms - scrollY:', window.scrollY, 'activeElement:', document.activeElement?.tagName);
+    }, 100);
+
+    setTimeout(() => {
+      console.log('[SCROLL DEBUG] 500ms - scrollY:', window.scrollY, 'activeElement:', document.activeElement?.tagName);
+    }, 500);
+
+    setTimeout(() => {
+      console.log('[SCROLL DEBUG] 1000ms - scrollY:', window.scrollY, 'activeElement:', document.activeElement?.tagName);
+    }, 1000);
   }, []);
 
   // Check unlock status on mount
@@ -242,6 +262,7 @@ export default function DesignerPage() {
                   src="https://www.blackveteransproject.org/"
                   title="Black Veterans Project website"
                   loading="lazy"
+                  tabIndex={-1}
                 />
               </div>
             </div>
@@ -270,6 +291,7 @@ export default function DesignerPage() {
                   src="https://experimentalschoolforblackimagination.com/"
                   title="ESBI website"
                   loading="lazy"
+                  tabIndex={-1}
                 />
               </div>
             </div>
