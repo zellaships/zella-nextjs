@@ -270,7 +270,7 @@ export default function DesignerPage() {
                 <li>Web Design</li>
               </ul>
               <h2 className="cs-featured-title">Experimental School for Black Imagination</h2>
-              <p className="cs-featured-desc">ESBI is a collective offering led by artists tending to the ways we come together to create, feel, and grow. As a founding organizer, I solo-built everything: brand identity, digital infrastructure, web design, and a lightweight design system with tokens that sync directly to code. The site holds the school&apos;s programs, a zine library, publications, and membership system—shipped iteratively as each program launched, then refined based on how our community actually used it.</p>
+              <p className="cs-featured-desc">ESBI is a collective offering led by artists tending to the ways we come together to create, feel, and grow. As a founding organizer and designer, I led our brand design, digital infrastructure, web design, and a lightweight design system with tokens that sync directly to code. The site holds our manifesto, programs, a zine library, and publications.</p>
               <div className="cs-featured-links">
                 <a href="https://experimentalschoolforblackimagination.com/" target="_blank" rel="noopener" className="cs-featured-link">View live site →</a>
               </div>
