@@ -414,6 +414,7 @@ nav.doors a.active::after {
     gap: 1rem;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     z-index: 100000;
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
@@ -424,6 +425,7 @@ nav.doors a.active::after {
   nav.doors.open {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
