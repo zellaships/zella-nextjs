@@ -13,6 +13,12 @@ export default function DesignerPage() {
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+  }, []);
+
   // Check unlock status on mount
   useEffect(() => {
     const checkUnlocked = () => {
