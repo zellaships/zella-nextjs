@@ -1336,7 +1336,7 @@ nav.doors a[href="/"] {
   overflow: hidden;
 }
 
-/* Shared iframe styles - small fixed scales for thumbnail effect */
+/* Shared iframe styles - 1440px desktop viewport, small scales for thumbnail */
 .cs-featured-preview .browser-viewport iframe,
 .browser-viewport-interactive iframe {
   position: absolute;
@@ -1346,7 +1346,7 @@ nav.doors a[href="/"] {
   width: 1440px;
   height: 900px;
   transform-origin: top left;
-  transform: scale(0.25);
+  transform: scale(0.18);
   pointer-events: auto;
   cursor: default;
 }
@@ -1354,21 +1354,21 @@ nav.doors a[href="/"] {
 @media (min-width: 480px) {
   .cs-featured-preview .browser-viewport iframe,
   .browser-viewport-interactive iframe {
-    transform: scale(0.28);
+    transform: scale(0.20);
   }
 }
 
 @media (min-width: 768px) {
   .cs-featured-preview .browser-viewport iframe,
   .browser-viewport-interactive iframe {
-    transform: scale(0.32);
+    transform: scale(0.22);
   }
 }
 
 @media (min-width: 1100px) {
   .cs-featured-preview .browser-viewport iframe,
   .browser-viewport-interactive iframe {
-    transform: scale(0.38);
+    transform: scale(0.26);
   }
 }
 
