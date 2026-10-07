@@ -13,15 +13,20 @@ export default function DesignerPage() {
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
   const [iframesReady, setIframesReady] = useState(false);
+  const [pageReady, setPageReady] = useState(false);
 
-  // Prevent iframe focus steal: don't load iframe src until page is stable
+  // Fix scroll position and reveal page
   useEffect(() => {
-    // Delay loading iframes until after initial render settles
-    const timer = setTimeout(() => {
-      setIframesReady(true);
-    }, 100);
+    // Immediately scroll to top
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
 
-    return () => clearTimeout(timer);
+    // Reveal page after scroll is set
+    requestAnimationFrame(() => {
+      setPageReady(true);
+      // Load iframes after page is visible
+      setTimeout(() => setIframesReady(true), 50);
+    });
   }, []);
 
   // Check unlock status on mount
@@ -130,7 +135,7 @@ export default function DesignerPage() {
   ];
 
   return (
-    <>
+    <div style={{ opacity: pageReady ? 1 : 0 }}>
       <TextGlowEffect />
       <SkipLink />
       <Header />
@@ -411,6 +416,6 @@ export default function DesignerPage() {
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }
