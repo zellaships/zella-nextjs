@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Footer } from '@/components/layout/Footer';
+import { LiveGrid } from '@/components/colophon/LiveGrid';
 import './colophon.css';
 
 export const metadata: Metadata = {
@@ -225,20 +226,7 @@ export default function ColophonPage() {
         {/* Grid */}
         <section className="col-section">
           <h2 className="col-heading">Grid</h2>
-          <div className="grid-specs">
-            <div className="grid-spec-card">
-              <span className="grid-label">Max Width</span>
-              <span className="grid-value">1180px</span>
-            </div>
-            <div className="grid-spec-card">
-              <span className="grid-label">Gutter</span>
-              <span className="grid-value">20–40px</span>
-            </div>
-            <div className="grid-spec-card">
-              <span className="grid-label">Header</span>
-              <span className="grid-value">60–76px</span>
-            </div>
-          </div>
+          <LiveGrid />
         </section>
 
         {/* Cards & Radius */}

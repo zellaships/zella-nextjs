@@ -342,6 +342,56 @@
   font-variation-settings: 'MONO' 100;
 }
 
+.grid-value-live {
+  color: var(--accent);
+}
+
+/* Breakpoint Indicator */
+.grid-specs-live {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+.grid-breakpoint {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+}
+
+.breakpoint-pill {
+  font-size: 12px;
+  font-weight: 600;
+  font-variation-settings: 'MONO' 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: var(--space-2xs) var(--space-s);
+  border: 2px solid var(--ink);
+}
+
+.breakpoint-pill.desktop {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.breakpoint-pill.tablet {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+
+.breakpoint-pill.mobile {
+  background: var(--ink);
+  color: white;
+}
+
+.breakpoint-width {
+  font-size: var(--text-l);
+  font-variation-settings: 'MONO' 100;
+  color: var(--ink-soft);
+}
+
 /* Radius Demo */
 .radius-demo {
   display: grid;
