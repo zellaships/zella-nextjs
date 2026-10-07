@@ -120,6 +120,10 @@ export default function ColophonPage() {
                 <span className="scale-sample scale-l">That presence reaches forward</span>
               </div>
               <div className="scale-row">
+                <span className="scale-label">m</span>
+                <span className="scale-sample scale-m">Return rearranges perception</span>
+              </div>
+              <div className="scale-row">
                 <span className="scale-label">base</span>
                 <span className="scale-sample scale-base">Body text for extended reading</span>
               </div>
