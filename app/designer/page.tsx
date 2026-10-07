@@ -13,20 +13,30 @@ export default function DesignerPage() {
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
   const [iframesReady, setIframesReady] = useState(false);
-  const [pageReady, setPageReady] = useState(false);
 
-  // Fix scroll position and reveal page
+  // Aggressive scroll fix - keep scrolling to top until stable
   useEffect(() => {
-    // Immediately scroll to top
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
+    // Disable browser scroll restoration
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
 
-    // Reveal page after scroll is set
-    requestAnimationFrame(() => {
-      setPageReady(true);
-      // Load iframes after page is visible
-      setTimeout(() => setIframesReady(true), 50);
-    });
+    // Scroll to top immediately
+    window.scrollTo(0, 0);
+
+    // Keep checking and correcting scroll for 1 second
+    const scrollToTop = () => window.scrollTo(0, 0);
+
+    const intervals = [0, 50, 100, 200, 300, 500, 800, 1000];
+    const timers = intervals.map(ms => setTimeout(scrollToTop, ms));
+
+    // Load iframes only after scroll is stable (after 1 second)
+    const iframeTimer = setTimeout(() => setIframesReady(true), 1100);
+
+    return () => {
+      timers.forEach(clearTimeout);
+      clearTimeout(iframeTimer);
+    };
   }, []);
 
   // Check unlock status on mount
@@ -135,7 +145,7 @@ export default function DesignerPage() {
   ];
 
   return (
-    <div style={{ opacity: pageReady ? 1 : 0 }}>
+    <>
       <TextGlowEffect />
       <SkipLink />
       <Header />
@@ -416,6 +426,6 @@ export default function DesignerPage() {
       </main>
 
       <Footer />
-    </div>
+    </>
   );
 }
