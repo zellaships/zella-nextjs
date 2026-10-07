@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export function LiveGrid() {
+  const measureRef = useRef<HTMLDivElement>(null);
   const [values, setValues] = useState({
     gutter: '—',
     header: '—',
@@ -12,16 +13,28 @@ export function LiveGrid() {
 
   useEffect(() => {
     const update = () => {
-      const styles = getComputedStyle(document.documentElement);
       const width = window.innerWidth;
 
-      // Get computed values
-      const gutter = styles.getPropertyValue('--wrap-padding').trim();
-      const header = styles.getPropertyValue('--header-h').trim();
+      // Create temp elements to measure actual computed values
+      const measureEl = document.createElement('div');
+      measureEl.style.cssText = 'position:absolute;visibility:hidden;pointer-events:none;';
 
-      // Parse to pixels for display
-      const gutterPx = Math.round(parseFloat(gutter) * (gutter.includes('rem') ? 16 : 1));
-      const headerPx = Math.round(parseFloat(header));
+      // Gutter measurement
+      const gutterEl = document.createElement('div');
+      gutterEl.style.width = 'var(--wrap-padding)';
+      measureEl.appendChild(gutterEl);
+
+      // Header measurement
+      const headerEl = document.createElement('div');
+      headerEl.style.height = 'var(--header-h)';
+      measureEl.appendChild(headerEl);
+
+      document.body.appendChild(measureEl);
+
+      const gutterPx = Math.round(parseFloat(getComputedStyle(gutterEl).width));
+      const headerPx = Math.round(parseFloat(getComputedStyle(headerEl).height));
+
+      document.body.removeChild(measureEl);
 
       // Determine breakpoint
       let breakpoint = 'DESKTOP';
