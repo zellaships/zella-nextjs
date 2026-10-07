@@ -4087,18 +4087,10 @@ body.case-study .cs-embed-full {
   color: #fff;
   margin: var(--space-xl) 0 0;
   padding: var(--space-xl) 0 0;
-}
-
-/* Full-bleed green background - extends edge to edge */
-.cs-explore--brutalist::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: calc(-50vw + 50%);
+  /* Full-bleed: extend to viewport edges */
   width: 100vw;
+  margin-left: calc(-50vw + 50%);
   background: #10B981;
-  z-index: -1;
 }
 
 .cs-explore--brutalist .cs-explore-label {
@@ -4110,6 +4102,9 @@ body.case-study .cs-embed-full {
   color: var(--ink);
   margin-bottom: var(--space-l);
   display: block;
+  /* Keep content aligned with page content */
+  padding-left: max(var(--wrap-padding), calc((100vw - var(--max-w)) / 2));
+  padding-right: max(var(--wrap-padding), calc((100vw - var(--max-w)) / 2));
 }
 
 .cs-explore--brutalist .cs-explore-strip {
@@ -4123,8 +4118,6 @@ body.case-study .cs-embed-full {
   background: transparent;
   box-shadow: none;
   padding: var(--space-l) max(var(--wrap-padding), calc((100vw - var(--max-w)) / 2));
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
   border-bottom: none;
   border-radius: 0;
   flex-direction: column;
@@ -4133,6 +4126,7 @@ body.case-study .cs-embed-full {
   transition: background-color 0.2s ease;
   cursor: pointer;
   display: block;
+  width: 100%;
 }
 
 .cs-explore--brutalist .cs-explore-item:hover {
