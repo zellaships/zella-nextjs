@@ -274,6 +274,11 @@ export default function DesignerPage() {
           </div>
         </div>
 
+        {/* DEBUG - remove after testing */}
+        <div style={{ background: '#ff0', padding: '10px', marginBottom: '20px', fontFamily: 'monospace' }}>
+          DEBUG: isHydrated={String(isHydrated)}, isUnlocked={String(isUnlocked)}
+        </div>
+
         {/* Password Gate */}
         <div className="cs-gate-box" id="csGateSection">
           <span className="cs-gate-label">My other past work is password protected. <a href="mailto:zellavanie@gmail.com?subject=Portfolio%20request%20%F0%9F%91%80" className="cs-gate-link">Reach out</a> if you&apos;d like to see it.</span>
