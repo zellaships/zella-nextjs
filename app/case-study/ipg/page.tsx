@@ -8,8 +8,8 @@ import { Navigation } from '@/components/layout/Navigation';
 
 export default function IPGCaseStudyPage() {
   return (
-    <>
-      
+    <div className="case-study">
+
       <TextGlowEffect />
       <SkipLink />
       <Header />
@@ -199,6 +199,6 @@ export default function IPGCaseStudyPage() {
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 }

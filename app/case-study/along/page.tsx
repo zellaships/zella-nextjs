@@ -8,8 +8,8 @@ import { Navigation } from '@/components/layout/Navigation';
 
 export default function AlongCaseStudy() {
   return (
-    <>
-      
+    <div className="case-study">
+
       <TextGlowEffect />
       <SkipLink />
       <Header />
@@ -386,6 +386,6 @@ export default function AlongCaseStudy() {
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 }

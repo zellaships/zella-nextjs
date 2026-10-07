@@ -8,8 +8,8 @@ import { Navigation } from '@/components/layout/Navigation';
 
 export default function MRUCaseStudy() {
   return (
-    <>
-      
+    <div className="case-study">
+
       <TextGlowEffect />
       <SkipLink />
 
@@ -172,6 +172,6 @@ export default function MRUCaseStudy() {
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 }

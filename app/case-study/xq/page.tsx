@@ -68,8 +68,8 @@ export default function XQCaseStudy() {
   };
 
   return (
-    <>
-      
+    <div className="case-study">
+
       <TextGlowEffect />
       <SkipLink />
       <Header />
@@ -371,6 +371,6 @@ export default function XQCaseStudy() {
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 }
