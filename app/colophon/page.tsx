@@ -41,6 +41,12 @@ export default function ColophonPage() {
             that spans sans, semi-mono, and mono on a single axis. Design, writing,
             and development by Zella.
           </p>
+          <div className="stack-inline">
+            <span className="stack-item"><span className="stack-label">Framework</span> Next.js 16</span>
+            <span className="stack-item"><span className="stack-label">Library</span> React 19</span>
+            <span className="stack-item"><span className="stack-label">Hosting</span> Vercel</span>
+            <span className="stack-item"><span className="stack-label">Last Deploy</span> <span className="stack-mono">{BUILD_TIME.split('T')[0]}</span></span>
+          </div>
         </section>
 
         {/* Typography */}
@@ -254,25 +260,44 @@ export default function ColophonPage() {
           </div>
         </section>
 
-        {/* Stack */}
+        {/* Effects */}
         <section className="col-section">
-          <h2 className="col-heading">Stack</h2>
-          <div className="stack-grid">
-            <div className="stack-card">
-              <span className="stack-label">Framework</span>
-              <span className="stack-value">Next.js 16</span>
+          <h2 className="col-heading">Effects</h2>
+          <p className="col-intro">The homepage hero text repels from the cursor using magnetic scatter physics.</p>
+
+          <div className="col-card">
+            <div className="col-card-header">
+              <span className="col-label">Magnetic Scatter</span>
             </div>
-            <div className="stack-card">
-              <span className="stack-label">Library</span>
-              <span className="stack-value">React 19</span>
+            <div className="col-card-body">
+              <div className="effect-specs">
+                <div className="effect-row">
+                  <span className="effect-label">Radius</span>
+                  <span className="effect-value">60px</span>
+                </div>
+                <div className="effect-row">
+                  <span className="effect-label">Strength</span>
+                  <span className="effect-value">80</span>
+                </div>
+                <div className="effect-row">
+                  <span className="effect-label">Easing</span>
+                  <span className="effect-value">0.08</span>
+                </div>
+                <div className="effect-row">
+                  <span className="effect-label">Rotation</span>
+                  <span className="effect-value">±15°</span>
+                </div>
+              </div>
             </div>
-            <div className="stack-card">
-              <span className="stack-label">Hosting</span>
-              <span className="stack-value">Vercel</span>
+          </div>
+
+          <div className="col-card">
+            <div className="col-card-header">
+              <span className="col-label">Force Formula</span>
             </div>
-            <div className="stack-card">
-              <span className="stack-label">Last Deploy</span>
-              <span className="stack-value stack-mono">{BUILD_TIME.split('T')[0]}</span>
+            <div className="col-card-body">
+              <code className="formula">force = ((radius - distance) / radius)²</code>
+              <p className="formula-note">Quadratic falloff creates natural deceleration at the edge of influence.</p>
             </div>
           </div>
         </section>

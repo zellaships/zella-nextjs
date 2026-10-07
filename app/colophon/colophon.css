@@ -46,6 +46,36 @@
   margin-bottom: var(--space-m);
 }
 
+/* Inline Stack (under overview) */
+.stack-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-m) var(--space-l);
+  margin-top: var(--space-m);
+  padding-top: var(--space-m);
+  border-top: 1px solid var(--line);
+}
+
+.stack-item {
+  font-size: var(--text-base);
+  display: flex;
+  gap: var(--space-xs);
+  align-items: baseline;
+}
+
+.stack-item .stack-label {
+  font-size: 11px;
+  font-weight: 600;
+  font-variation-settings: 'MONO' 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+}
+
+.stack-item .stack-mono {
+  font-variation-settings: 'MONO' 100;
+}
+
 /* Cards */
 .col-card {
   border: 2px solid var(--ink);
@@ -350,43 +380,51 @@
   color: var(--ink-soft);
 }
 
-/* Stack */
-.stack-grid {
+/* Effects */
+.effect-specs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  background: var(--ink);
-  border: 2px solid var(--ink);
+  gap: var(--space-m);
 }
 
-@media (max-width: 768px) {
-  .stack-grid {
+@media (max-width: 640px) {
+  .effect-specs {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.stack-card {
-  background: var(--paper);
-  padding: var(--space-m);
+.effect-row {
   display: flex;
   flex-direction: column;
   gap: var(--space-2xs);
 }
 
-.stack-label {
-  font-size: 12px;
-  font-variation-settings: 'MONO' 100;
+.effect-label {
+  font-size: 11px;
   font-weight: 600;
+  font-variation-settings: 'MONO' 100;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--ink-soft);
 }
 
-.stack-value {
-  font-size: var(--text-xl);
+.effect-value {
+  font-size: var(--text-2xl);
   font-weight: 500;
+  font-variation-settings: 'MONO' 100;
 }
 
-.stack-mono {
+.formula {
+  display: block;
+  font-size: var(--text-l);
   font-variation-settings: 'MONO' 100;
+  background: var(--paper-deep);
+  padding: var(--space-s) var(--space-m);
+  border: 1px solid var(--line);
+}
+
+.formula-note {
+  font-size: var(--text-base);
+  color: var(--ink-soft);
+  margin-top: var(--space-s);
 }
