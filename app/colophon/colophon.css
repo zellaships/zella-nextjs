@@ -103,6 +103,19 @@
   letter-spacing: 0.1em;
 }
 
+.col-label-note {
+  font-size: 11px;
+  font-variation-settings: 'MONO' 100;
+  color: var(--ink-soft);
+}
+
+/* Scatter Letters */
+.scatter-letter {
+  display: inline-block;
+  will-change: transform;
+  cursor: default;
+}
+
 .col-link {
   font-size: var(--text-l);
   font-weight: 500;

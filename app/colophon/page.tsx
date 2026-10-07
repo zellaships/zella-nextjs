@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Footer } from '@/components/layout/Footer';
 import { LiveGrid } from '@/components/colophon/LiveGrid';
+import { ScatterHeading } from '@/components/colophon/ScatterHeading';
 import './colophon.css';
 
 export const metadata: Metadata = {
@@ -231,14 +232,15 @@ export default function ColophonPage() {
 
         {/* Effects */}
         <section className="col-section">
-          <h2 className="col-heading">Effects</h2>
-          <p className="col-intro">The homepage hero text repels from the cursor using magnetic scatter physics.</p>
+          <ScatterHeading className="col-heading">Effects</ScatterHeading>
 
           <div className="col-card">
             <div className="col-card-header">
               <span className="col-label">Magnetic Scatter</span>
+              <span className="col-label-note">Home page</span>
             </div>
             <div className="col-card-body">
+              <p className="col-intro">Letters repel from cursor. Hover the heading above to see it in action.</p>
               <div className="effect-specs">
                 <div className="effect-row">
                   <span className="effect-label">Radius</span>
@@ -257,16 +259,36 @@ export default function ColophonPage() {
                   <span className="effect-value">±15°</span>
                 </div>
               </div>
+              <code className="formula">force = ((radius - distance) / radius)²</code>
             </div>
           </div>
 
           <div className="col-card">
             <div className="col-card-header">
-              <span className="col-label">Force Formula</span>
+              <span className="col-label">Text Glow</span>
+              <span className="col-label-note">Art & Design pages</span>
             </div>
             <div className="col-card-body">
-              <code className="formula">force = ((radius - distance) / radius)²</code>
-              <p className="formula-note">Quadratic falloff creates natural deceleration at the edge of influence.</p>
+              <p className="col-intro">Radial gradient follows cursor, clips to heading text. Scroll to shift hue.</p>
+              <div className="effect-specs">
+                <div className="effect-row">
+                  <span className="effect-label">Radius</span>
+                  <span className="effect-value">120px</span>
+                </div>
+                <div className="effect-row">
+                  <span className="effect-label">Hue Range</span>
+                  <span className="effect-value">220–280</span>
+                </div>
+                <div className="effect-row">
+                  <span className="effect-label">Saturation</span>
+                  <span className="effect-value">85%</span>
+                </div>
+                <div className="effect-row">
+                  <span className="effect-label">Lightness</span>
+                  <span className="effect-value">55%</span>
+                </div>
+              </div>
+              <code className="formula">radial-gradient(circle 120px at cursor, hsl(hue, 85%, 55%))</code>
             </div>
           </div>
         </section>
