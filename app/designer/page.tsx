@@ -12,30 +12,35 @@ export default function DesignerPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
-  const [iframesReady, setIframesReady] = useState(false);
 
-  // Aggressive scroll fix - keep scrolling to top until stable
+  // DEBUG: Isolate iframe scroll mechanism
   useEffect(() => {
-    // Disable browser scroll restoration
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
+    const timestamp = () => `[${(performance.now() / 1000).toFixed(3)}s]`;
 
-    // Scroll to top immediately
-    window.scrollTo(0, 0);
+    // Log scroll events
+    const onScroll = () => {
+      console.log(`${timestamp()} SCROLL EVENT - scrollY: ${window.scrollY}, activeElement: ${document.activeElement?.tagName}`);
+    };
 
-    // Keep checking and correcting scroll for 1 second
-    const scrollToTop = () => window.scrollTo(0, 0);
+    // Log focus events
+    const onFocus = (e: FocusEvent) => {
+      console.log(`${timestamp()} FOCUS EVENT - target: ${(e.target as HTMLElement)?.tagName}, activeElement: ${document.activeElement?.tagName}`);
+    };
 
-    const intervals = [0, 50, 100, 200, 300, 500, 800, 1000];
-    const timers = intervals.map(ms => setTimeout(scrollToTop, ms));
+    const onFocusIn = (e: FocusEvent) => {
+      console.log(`${timestamp()} FOCUSIN EVENT - target: ${(e.target as HTMLElement)?.tagName}, scrollY: ${window.scrollY}`);
+    };
 
-    // Load iframes only after scroll is stable (after 1 second)
-    const iframeTimer = setTimeout(() => setIframesReady(true), 1100);
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('focus', onFocus, true);
+    window.addEventListener('focusin', onFocusIn, true);
+
+    console.log(`${timestamp()} PAGE MOUNT - scrollY: ${window.scrollY}`);
 
     return () => {
-      timers.forEach(clearTimeout);
-      clearTimeout(iframeTimer);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('focus', onFocus, true);
+      window.removeEventListener('focusin', onFocusIn, true);
     };
   }, []);
 
@@ -258,13 +263,12 @@ export default function DesignerPage() {
                 <div className="browser-url">blackveteransproject.org</div>
               </div>
               <div className="browser-viewport browser-viewport-interactive">
-                {iframesReady && (
-                  <iframe
-                    src="https://www.blackveteransproject.org/"
-                    title="Black Veterans Project website"
-                    tabIndex={-1}
-                  />
-                )}
+                <iframe
+                  src="https://www.blackveteransproject.org/"
+                  title="Black Veterans Project website"
+                  tabIndex={-1}
+                  onLoad={() => console.log(`[${(performance.now() / 1000).toFixed(3)}s] BVP IFRAME LOADED - scrollY: ${window.scrollY}, activeElement: ${document.activeElement?.tagName}`)}
+                />
               </div>
             </div>
           </div>
@@ -288,13 +292,14 @@ export default function DesignerPage() {
                 <div className="browser-url">experimentalschoolforblackimagination.com</div>
               </div>
               <div className="browser-viewport browser-viewport-interactive">
-                {iframesReady && (
-                  <iframe
-                    src="https://experimentalschoolforblackimagination.com/"
-                    title="ESBI website"
-                    tabIndex={-1}
-                  />
-                )}
+                {/* DISABLED FOR TESTING - uncomment to test ESBI iframe
+                <iframe
+                  src="https://experimentalschoolforblackimagination.com/"
+                  title="ESBI website"
+                  tabIndex={-1}
+                  onLoad={() => console.log(`[${(performance.now() / 1000).toFixed(3)}s] ESBI IFRAME LOADED - scrollY: ${window.scrollY}, activeElement: ${document.activeElement?.tagName}`)}
+                />
+                */}
               </div>
             </div>
           </div>
