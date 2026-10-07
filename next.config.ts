@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Now running as a real Next.js server on Vercel
+  // Disable scroll restoration to ensure pages start at top
+  experimental: {
+    scrollRestoration: false,
+  },
 };
 
 export default nextConfig;

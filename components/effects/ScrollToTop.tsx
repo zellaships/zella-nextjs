@@ -4,20 +4,25 @@ import { useEffect, useLayoutEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 /**
- * Scrolls to top on route change
+ * Scrolls to top on route change - aggressive approach
  */
 export function ScrollToTop() {
   const pathname = usePathname();
 
-  // Use useLayoutEffect for synchronous scroll before paint
+  // Force scroll to top on every route change
   useLayoutEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  }, [pathname]);
+    // Multiple methods to ensure scroll works
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 
-  // Also run on mount
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  }, []);
+    // Also try after a tiny delay for any async rendering
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+  }, [pathname]);
 
   return null;
 }
