@@ -260,8 +260,11 @@ export default function DesignerPage() {
                 <div className="browser-url">experimentalschoolforblackimagination.com</div>
               </div>
               <div className="browser-viewport browser-viewport-interactive">
-                {/* ESBI disabled during controlled test - isolating BVP */}
-                <div style={{ width: '1440px', height: '900px', background: '#1a1a1a' }} />
+                <iframe
+                  src="https://experimentalschoolforblackimagination.com/"
+                  title="Experimental School for Black Imagination website preview"
+                  tabIndex={-1}
+                />
               </div>
             </div>
           </div>
