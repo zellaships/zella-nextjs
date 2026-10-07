@@ -1528,7 +1528,7 @@ nav.doors a[href="/"] {
 /* CZI card - crop whitespace at top, show dashboard content */
 .cs-card[href="/case-study/czi"] .cs-card-image img {
   object-fit: cover;
-  object-position: center 75%;
+  object-position: center top;
 }
 .cs-card[href="/case-study/czi"]:hover .cs-card-image img {
   transform: scale(1.04);
