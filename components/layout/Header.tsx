@@ -84,12 +84,7 @@ export function Header() {
           <Link className="wordmark" href="/" onClick={closeNav}>
             <img src="/assets/images/zella-logo.png" alt="Zella" className="logo-img" />
           </Link>
-          <nav
-            className={`doors${isNavOpen ? ' open' : ''}`}
-            style={{
-              zIndex: isNavOpen ? 2147483646 : undefined,
-            }}
-          >
+          <nav className={`doors${isNavOpen ? ' open' : ''}`}>
             <Link href="/" scroll={true} onClick={closeNav}>Home</Link>
             <Link href="/artist" scroll={true} onClick={closeNav}>Art</Link>
             <Link href="/designer" scroll={true} onClick={closeNav}>Design</Link>
@@ -103,23 +98,6 @@ export function Header() {
         className={`nav-toggle${isNavOpen ? ' active' : ''}`}
         aria-label="Toggle navigation"
         aria-expanded={isNavOpen}
-        style={{
-          position: 'fixed',
-          top: '12px',
-          right: '12px',
-          zIndex: 2147483647,
-          pointerEvents: 'auto',
-          isolation: 'isolate',
-          background: 'rgba(255, 0, 0, 0.3)',
-          width: '48px',
-          height: '48px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          border: '2px solid red',
-          cursor: 'pointer',
-        }}
       >
         <span></span>
         <span></span>
@@ -130,9 +108,6 @@ export function Header() {
         className={`nav-overlay${isNavOpen ? ' open' : ''}`}
         aria-hidden="true"
         onClick={closeNav}
-        style={{
-          zIndex: isNavOpen ? 2147483645 : -1,
-        }}
       />
     </>
   );

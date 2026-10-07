@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { MagneticScatterText } from '@/components/effects/MagneticScatterText';
+import { Header } from '@/components/layout/Header';
 
 export const metadata: Metadata = {
   title: 'Zella — Artist, Designer, Cultural Organizer',
@@ -31,21 +32,7 @@ export default function HomePage() {
       <a href="#main-content" className="skip-link">Skip to main content</a>
       <canvas id="ink-canvas"></canvas>
 
-      <header className="site-header">
-        <div className="wrap">
-          <Link className="wordmark" href="/"><img src="/assets/images/zella-logo.png" alt="Zella" className="logo-img" /></Link>
-          <button className="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <nav className="doors">
-            <Link href="/">Home</Link>
-            <Link href="/artist">Art</Link>
-            <Link href="/designer">Design</Link>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <main className="wrap" id="main-content">
         <section className="essay essay-wide">
