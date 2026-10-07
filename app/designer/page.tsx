@@ -234,7 +234,7 @@ export default function DesignerPage() {
                 <li>Headless CMS</li>
               </ul>
               <h2 className="cs-featured-title">Black Veterans Project</h2>
-              <p className="cs-featured-desc">After years of growth with the same website, BVP had evolved into a national social justice organization, and our digital presence needed to reflect that. As co-founder and product lead, I led our website redesign—shipped in 8 weeks—coordinating brand design and content while also handling development. I chose a headless CMS so our comms team could update content without engineering support, and structured it to feed future channels as we scale.</p>
+              <p className="cs-featured-desc">After years of growth with the same website, BVP had evolved into a national social justice organization, and our digital presence needed to reflect that. As co-founder and product lead, I led our website redesign, coordinating brand and content while also handling design and development.</p>
               <div className="cs-featured-links">
                 <a href="https://www.blackveteransproject.org/" target="_blank" rel="noopener" className="cs-featured-link">View live site →</a>
                 <a href="https://www.blackveteransproject.org/design-system" target="_blank" rel="noopener" className="cs-featured-link">View design system →</a>
