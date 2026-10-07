@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 
 export function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const closeNav = useCallback(() => {
     setIsNavOpen(false);
@@ -24,6 +25,37 @@ export function Header() {
       }
       return newState;
     });
+  }, []);
+
+  // Manual click handler as backup
+  useEffect(() => {
+    const btn = buttonRef.current;
+    if (!btn) return;
+
+    const handleClick = (e: Event) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Manual click handler fired!');
+      setIsNavOpen(prev => {
+        const newState = !prev;
+        if (newState) {
+          document.body.style.overflow = 'hidden';
+          document.body.classList.add('nav-open');
+        } else {
+          document.body.style.overflow = '';
+          document.body.classList.remove('nav-open');
+        }
+        return newState;
+      });
+    };
+
+    btn.addEventListener('click', handleClick, { capture: true });
+    btn.addEventListener('touchend', handleClick, { capture: true });
+
+    return () => {
+      btn.removeEventListener('click', handleClick, { capture: true });
+      btn.removeEventListener('touchend', handleClick, { capture: true });
+    };
   }, []);
 
   // Handle escape key
@@ -66,21 +98,27 @@ export function Header() {
       </header>
       {/* Mobile hamburger - outside header to avoid stacking issues */}
       <button
+        ref={buttonRef}
         type="button"
         className={`nav-toggle${isNavOpen ? ' active' : ''}`}
         aria-label="Toggle navigation"
         aria-expanded={isNavOpen}
         style={{
           position: 'fixed',
+          top: '12px',
+          right: '12px',
           zIndex: 2147483647,
           pointerEvents: 'auto',
           isolation: 'isolate',
-        }}
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          console.log('Hamburger clicked!');
-          toggleNav();
+          background: 'rgba(255, 0, 0, 0.3)',
+          width: '48px',
+          height: '48px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          border: '2px solid red',
+          cursor: 'pointer',
         }}
       >
         <span></span>
