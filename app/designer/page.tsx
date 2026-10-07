@@ -308,7 +308,7 @@ export default function DesignerPage() {
             <input
               type="password"
               id="csPassword"
-              placeholder={formState === 'error' ? 'Try again' : formState === 'success' ? 'Unlocked!' : 'Password'}
+              placeholder={formState === 'error' ? 'Wrong password' : formState === 'success' ? 'Unlocked!' : 'Password'}
               autoComplete="off"
               spellCheck={false}
               value={passwordInput}
@@ -316,6 +316,7 @@ export default function DesignerPage() {
                 setPasswordInput(e.target.value);
                 if (formState !== 'idle') setFormState('idle');
               }}
+              style={formState === 'error' ? { color: '#DC2626' } : undefined}
             />
             <button type="submit" aria-label="Submit">
               {formState === 'success' ? (
