@@ -53,10 +53,12 @@ export function Header() {
             <img src="/assets/images/zella-logo.png" alt="Zella" className="logo-img" />
           </Link>
           <button
+            type="button"
             className={`nav-toggle${isNavOpen ? ' active' : ''}`}
             aria-label="Toggle navigation"
             aria-expanded={isNavOpen}
             onClick={toggleNav}
+            onTouchEnd={(e) => { e.preventDefault(); toggleNav(); }}
           >
             <span></span>
             <span></span>
