@@ -14,16 +14,12 @@ export default function DesignerPage() {
   const [showError, setShowError] = useState(false);
   const [iframesReady, setIframesReady] = useState(false);
 
-  // Prevent iframe focus steal: disable pointer events initially, enable after scroll stabilizes
+  // Prevent iframe focus steal: don't load iframe src until page is stable
   useEffect(() => {
-    // Wait for iframes to load and attempt focus steal, then correct scroll and enable interaction
+    // Delay loading iframes until after initial render settles
     const timer = setTimeout(() => {
-      // Force scroll to top after iframe focus steal attempt
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      // Now enable iframe interaction
       setIframesReady(true);
-    }, 600); // After the 500ms when focus steal happens
+    }, 100);
 
     return () => clearTimeout(timer);
   }, []);
@@ -247,13 +243,13 @@ export default function DesignerPage() {
                 <div className="browser-url">blackveteransproject.org</div>
               </div>
               <div className="browser-viewport browser-viewport-interactive">
-                <iframe
-                  src="https://www.blackveteransproject.org/"
-                  title="Black Veterans Project website"
-                  loading="lazy"
-                  tabIndex={-1}
-                  style={{ pointerEvents: iframesReady ? 'auto' : 'none' }}
-                />
+                {iframesReady && (
+                  <iframe
+                    src="https://www.blackveteransproject.org/"
+                    title="Black Veterans Project website"
+                    tabIndex={-1}
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -277,13 +273,13 @@ export default function DesignerPage() {
                 <div className="browser-url">experimentalschoolforblackimagination.com</div>
               </div>
               <div className="browser-viewport browser-viewport-interactive">
-                <iframe
-                  src="https://experimentalschoolforblackimagination.com/"
-                  title="ESBI website"
-                  loading="lazy"
-                  tabIndex={-1}
-                  style={{ pointerEvents: iframesReady ? 'auto' : 'none' }}
-                />
+                {iframesReady && (
+                  <iframe
+                    src="https://experimentalschoolforblackimagination.com/"
+                    title="ESBI website"
+                    tabIndex={-1}
+                  />
+                )}
               </div>
             </div>
           </div>
