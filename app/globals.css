@@ -1557,7 +1557,7 @@ nav.doors a[href="/"] {
 
 /* CZI card - skip whitespace at top of image */
 .cs-card[href="/case-study/czi"] .cs-card-image .scroll-img {
-  top: -45%;
+  top: -58%;
 }
 
 /* MRU card - shift up to center key info */
