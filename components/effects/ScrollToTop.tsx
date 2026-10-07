@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 /**
@@ -9,9 +9,15 @@ import { usePathname } from 'next/navigation';
 export function ScrollToTop() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
+  // Use useLayoutEffect for synchronous scroll before paint
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [pathname]);
+
+  // Also run on mount
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
 
   return null;
 }

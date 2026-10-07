@@ -15,9 +15,9 @@ export function Header() {
           <span></span>
         </button>
         <nav className="doors">
-          <Link href="/">Home</Link>
-          <Link href="/artist">Art</Link>
-          <Link href="/designer">Design</Link>
+          <Link href="/" scroll={true}>Home</Link>
+          <Link href="/artist" scroll={true}>Art</Link>
+          <Link href="/designer" scroll={true}>Design</Link>
         </nav>
       </div>
     </header>
