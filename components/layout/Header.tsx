@@ -1,25 +1,80 @@
 'use client';
 
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 
 export function Header() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const closeNav = useCallback(() => {
+    setIsNavOpen(false);
+    document.body.style.overflow = '';
+    document.body.classList.remove('nav-open');
+  }, []);
+
+  const toggleNav = useCallback(() => {
+    setIsNavOpen(prev => {
+      const newState = !prev;
+      if (newState) {
+        document.body.style.overflow = 'hidden';
+        document.body.classList.add('nav-open');
+      } else {
+        document.body.style.overflow = '';
+        document.body.classList.remove('nav-open');
+      }
+      return newState;
+    });
+  }, []);
+
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isNavOpen) {
+        closeNav();
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isNavOpen, closeNav]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = '';
+      document.body.classList.remove('nav-open');
+    };
+  }, []);
+
   return (
-    <header className="site-header">
-      <div className="wrap">
-        <Link className="wordmark" href="/">
-          <img src="/assets/images/zella-logo.png" alt="Zella" className="logo-img" />
-        </Link>
-        <button className="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav className="doors">
-          <Link href="/" scroll={true}>Home</Link>
-          <Link href="/artist" scroll={true}>Art</Link>
-          <Link href="/designer" scroll={true}>Design</Link>
-        </nav>
-      </div>
-    </header>
+    <>
+      <header className="site-header">
+        <div className="wrap">
+          <Link className="wordmark" href="/" onClick={closeNav}>
+            <img src="/assets/images/zella-logo.png" alt="Zella" className="logo-img" />
+          </Link>
+          <button
+            className={`nav-toggle${isNavOpen ? ' active' : ''}`}
+            aria-label="Toggle navigation"
+            aria-expanded={isNavOpen}
+            onClick={toggleNav}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav className={`doors${isNavOpen ? ' open' : ''}`}>
+            <Link href="/" scroll={true} onClick={closeNav}>Home</Link>
+            <Link href="/artist" scroll={true} onClick={closeNav}>Art</Link>
+            <Link href="/designer" scroll={true} onClick={closeNav}>Design</Link>
+          </nav>
+        </div>
+      </header>
+      {/* Mobile nav overlay */}
+      <div
+        className={`nav-overlay${isNavOpen ? ' open' : ''}`}
+        aria-hidden="true"
+        onClick={closeNav}
+      />
+    </>
   );
 }
