@@ -10,6 +10,7 @@ import { TextGlowEffect } from '@/components/effects/TextGlowEffect';
 
 export default function DesignerPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
 
@@ -31,6 +32,8 @@ export default function DesignerPage() {
     if (checkUnlocked()) {
       setIsUnlocked(true);
     }
+    // Mark as hydrated AFTER checking - cards won't render until this is true
+    setIsHydrated(true);
   }, []);
 
   // Session token generator
@@ -293,8 +296,8 @@ export default function DesignerPage() {
           {showError && <span className="cs-gate-error" id="csGateError">Incorrect password</span>}
         </div>
 
-        {/* Placeholder cards (visible before unlock) */}
-        {!isUnlocked && (
+        {/* Placeholder cards (visible before unlock, only after hydration) */}
+        {isHydrated && !isUnlocked && (
           <section className="cs-gate-section">
             <div className="cs-grid cs-grid-placeholder" id="csGridPlaceholder">
               <div className="cs-card cs-card-placeholder">
@@ -371,8 +374,8 @@ export default function DesignerPage() {
           </section>
         )}
 
-        {/* Case Studies Grid (shown when unlocked) */}
-        {isUnlocked && (
+        {/* Case Studies Grid (shown when unlocked, only after hydration) */}
+        {isHydrated && isUnlocked && (
           <div className="cs-grid cs-grid-unlocked" id="csGrid">
             {caseStudies.map((study, index) => (
               <Link key={index} className="cs-card" href={study.href}>
