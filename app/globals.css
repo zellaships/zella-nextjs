@@ -1334,17 +1334,17 @@ nav.doors a[href="/"] {
   top: 0;
   left: 0;
   border: none;
-  width: 2200px;
-  height: 2400px;
+  width: 1920px;
+  height: 1400px;
   transform-origin: top left;
   pointer-events: none;
   animation: none;
 }
 
-/* Container query based scaling - iframe fills container, shows more content */
+/* Container query based scaling - iframe fills container */
 @container (min-width: 0px) {
   .cs-featured-preview .browser-viewport iframe {
-    transform: scale(calc(100cqw / 2200));
+    transform: scale(calc(100cqw / 1920));
   }
 }
 
@@ -1363,17 +1363,17 @@ nav.doors a[href="/"] {
   top: 0;
   left: 0;
   border: none;
-  width: 2200px;
-  height: 2000px;
+  width: 1920px;
+  height: 1400px;
   transform-origin: top left;
   pointer-events: auto;
   cursor: default;
 }
 
-/* Container query based scaling - iframe fills container, shows more content */
+/* Container query based scaling - iframe fills container */
 @container (min-width: 0px) {
   .browser-viewport-interactive iframe {
-    transform: scale(calc(100cqw / 2200));
+    transform: scale(calc(100cqw / 1920));
   }
 }
 
