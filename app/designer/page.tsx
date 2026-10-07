@@ -236,7 +236,7 @@ export default function DesignerPage() {
                   src="https://www.blackveteransproject.org/"
                   title="Black Veterans Project website preview"
                   tabIndex={-1}
-                  sandbox="allow-scripts"
+                  sandbox="allow-scripts allow-same-origin"
                 />
               </div>
             </div>
@@ -265,7 +265,7 @@ export default function DesignerPage() {
                   src="https://experimentalschoolforblackimagination.com/"
                   title="Experimental School for Black Imagination website preview"
                   tabIndex={-1}
-                  sandbox="allow-scripts"
+                  sandbox="allow-scripts allow-same-origin"
                 />
               </div>
             </div>
