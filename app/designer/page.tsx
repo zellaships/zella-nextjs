@@ -204,7 +204,6 @@ export default function DesignerPage() {
             <img src="/assets/images/logos/virgin.png" alt="Virgin" loading="lazy" />
             <img src="/assets/images/logos/xq.png" alt="XQ" loading="lazy" />
             <img src="/assets/images/logos/us-green-building-council.png" alt="US Green Building Council" loading="lazy" />
-            <img src="/assets/images/logos/hias.png" alt="HIAS" loading="lazy" />
             <img src="/assets/images/logos/fast-company.png" alt="Fast Company" loading="lazy" />
             {/* Duplicate for seamless loop */}
             <img src="/assets/images/logos/ibm.png" alt="IBM" loading="lazy" />
@@ -215,7 +214,6 @@ export default function DesignerPage() {
             <img src="/assets/images/logos/virgin.png" alt="Virgin" loading="lazy" />
             <img src="/assets/images/logos/xq.png" alt="XQ" loading="lazy" />
             <img src="/assets/images/logos/us-green-building-council.png" alt="US Green Building Council" loading="lazy" />
-            <img src="/assets/images/logos/hias.png" alt="HIAS" loading="lazy" />
             <img src="/assets/images/logos/fast-company.png" alt="Fast Company" loading="lazy" />
           </div>
         </div>
