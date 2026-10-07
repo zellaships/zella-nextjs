@@ -81,15 +81,15 @@ export default function ColophonPage() {
             <div className="col-card-body specimen-grid">
               <div className="specimen-row">
                 <span className="specimen-label">Sans</span>
-                <span className="specimen-sample specimen-sans">The ceremony of innocence is drowned</span>
+                <span className="specimen-sample specimen-sans">Return rearranges perception</span>
               </div>
               <div className="specimen-row">
                 <span className="specimen-label">Semi</span>
-                <span className="specimen-sample specimen-semi">The ceremony of innocence is drowned</span>
+                <span className="specimen-sample specimen-semi">Return rearranges perception</span>
               </div>
               <div className="specimen-row">
                 <span className="specimen-label">Mono</span>
-                <span className="specimen-sample specimen-mono">The ceremony of innocence is drowned</span>
+                <span className="specimen-sample specimen-mono">Return rearranges perception</span>
               </div>
             </div>
           </div>
@@ -101,23 +101,23 @@ export default function ColophonPage() {
             <div className="col-card-body">
               <div className="scale-row">
                 <span className="scale-label">4xl</span>
-                <span className="scale-sample scale-4xl">We are here</span>
+                <span className="scale-sample scale-4xl">Return rearranges perception</span>
               </div>
               <div className="scale-row">
                 <span className="scale-label">3xl</span>
-                <span className="scale-sample scale-3xl">In this now</span>
+                <span className="scale-sample scale-3xl">Return rearranges perception</span>
               </div>
               <div className="scale-row">
                 <span className="scale-label">2xl</span>
-                <span className="scale-sample scale-2xl">And every now before</span>
+                <span className="scale-sample scale-2xl">Return rearranges perception</span>
               </div>
               <div className="scale-row">
                 <span className="scale-label">xl</span>
-                <span className="scale-sample scale-xl">Each time we gather</span>
+                <span className="scale-sample scale-xl">Return rearranges perception</span>
               </div>
               <div className="scale-row">
                 <span className="scale-label">l</span>
-                <span className="scale-sample scale-l">That presence reaches forward</span>
+                <span className="scale-sample scale-l">Return rearranges perception</span>
               </div>
               <div className="scale-row">
                 <span className="scale-label">m</span>
@@ -125,7 +125,7 @@ export default function ColophonPage() {
               </div>
               <div className="scale-row">
                 <span className="scale-label">base</span>
-                <span className="scale-sample scale-base">Body text for extended reading</span>
+                <span className="scale-sample scale-base">Return rearranges perception</span>
               </div>
             </div>
           </div>
