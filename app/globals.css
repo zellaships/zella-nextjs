@@ -4620,9 +4620,7 @@ input:focus-visible {
   transform: translateX(4px);
 }
 
-.cs-gate-error {
-  display: none; /* Using inline placeholder messages instead */
-}
+/* Error styling is handled by .cs-gate-form-inline.cs-gate-error below */
 
 /* Placeholder grid - visible before unlock (matches .cs-grid) */
 .cs-grid-placeholder {
