@@ -187,14 +187,11 @@ main {
 }
 
 /* Allow full-bleed sections on case study pages */
+body.case-study,
 body.case-study .wrap,
 body.case-study main {
-  overflow-x: visible;
-}
-
-html:has(body.case-study),
-body.case-study {
   overflow-x: clip;
+  overflow-y: visible;
 }
 
 /* ---------- Header / nav ---------- */
@@ -2959,6 +2956,7 @@ body.case-study .cs-explore--brutalist {
 
 body.case-study main.wrap {
   padding-bottom: 0;
+  overflow-x: visible; /* Allow full-bleed sections to extend beyond wrap */
 }
 
 
@@ -4076,14 +4074,13 @@ body.case-study .cs-embed-full {
   padding: var(--space-xl) 0 0;
 }
 
-/* Full-bleed green background */
+/* Full-bleed green background - extends edge to edge */
 .cs-explore--brutalist::before {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(-50vw + 50%);
   width: 100vw;
   background: #10B981;
   z-index: -1;
