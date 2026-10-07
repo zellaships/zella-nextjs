@@ -52,18 +52,6 @@ export function Header() {
           <Link className="wordmark" href="/" onClick={closeNav}>
             <img src="/assets/images/zella-logo.png" alt="Zella" className="logo-img" />
           </Link>
-          <button
-            type="button"
-            className={`nav-toggle${isNavOpen ? ' active' : ''}`}
-            aria-label="Toggle navigation"
-            aria-expanded={isNavOpen}
-            onClick={toggleNav}
-            onTouchEnd={(e) => { e.preventDefault(); toggleNav(); }}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
           <nav className={`doors${isNavOpen ? ' open' : ''}`}>
             <Link href="/" scroll={true} onClick={closeNav}>Home</Link>
             <Link href="/artist" scroll={true} onClick={closeNav}>Art</Link>
@@ -71,6 +59,21 @@ export function Header() {
           </nav>
         </div>
       </header>
+      {/* Mobile hamburger - outside header to avoid stacking issues */}
+      <button
+        type="button"
+        className={`nav-toggle${isNavOpen ? ' active' : ''}`}
+        aria-label="Toggle navigation"
+        aria-expanded={isNavOpen}
+        onClick={() => {
+          console.log('Hamburger clicked!');
+          toggleNav();
+        }}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       {/* Mobile nav overlay */}
       <div
         className={`nav-overlay${isNavOpen ? ' open' : ''}`}
