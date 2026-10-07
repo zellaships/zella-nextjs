@@ -236,7 +236,6 @@ export default function DesignerPage() {
                   src="https://www.blackveteransproject.org/"
                   title="Black Veterans Project website preview"
                   tabIndex={-1}
-                  sandbox="allow-scripts allow-same-origin"
                 />
               </div>
             </div>
@@ -261,12 +260,8 @@ export default function DesignerPage() {
                 <div className="browser-url">experimentalschoolforblackimagination.com</div>
               </div>
               <div className="browser-viewport browser-viewport-interactive">
-                <iframe
-                  src="https://experimentalschoolforblackimagination.com/"
-                  title="Experimental School for Black Imagination website preview"
-                  tabIndex={-1}
-                  sandbox="allow-scripts allow-same-origin"
-                />
+                {/* ESBI disabled during controlled test - isolating BVP */}
+                <div style={{ width: '1440px', height: '900px', background: '#1a1a1a' }} />
               </div>
             </div>
           </div>
