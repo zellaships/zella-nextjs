@@ -12,31 +12,20 @@ export default function DesignerPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [showError, setShowError] = useState(false);
+  const [iframesReady, setIframesReady] = useState(false);
 
-  // DEBUG: Track scroll position changes
+  // Prevent iframe focus steal: disable pointer events initially, enable after scroll stabilizes
   useEffect(() => {
-    console.log('[SCROLL DEBUG] Mount - scrollY:', window.scrollY);
-    console.log('[SCROLL DEBUG] activeElement:', document.activeElement?.tagName, document.activeElement);
+    // Wait for iframes to load and attempt focus steal, then correct scroll and enable interaction
+    const timer = setTimeout(() => {
+      // Force scroll to top after iframe focus steal attempt
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      // Now enable iframe interaction
+      setIframesReady(true);
+    }, 600); // After the 500ms when focus steal happens
 
-    requestAnimationFrame(() => {
-      console.log('[SCROLL DEBUG] rAF - scrollY:', window.scrollY);
-    });
-
-    setTimeout(() => {
-      console.log('[SCROLL DEBUG] 0ms - scrollY:', window.scrollY, 'activeElement:', document.activeElement?.tagName);
-    }, 0);
-
-    setTimeout(() => {
-      console.log('[SCROLL DEBUG] 100ms - scrollY:', window.scrollY, 'activeElement:', document.activeElement?.tagName);
-    }, 100);
-
-    setTimeout(() => {
-      console.log('[SCROLL DEBUG] 500ms - scrollY:', window.scrollY, 'activeElement:', document.activeElement?.tagName);
-    }, 500);
-
-    setTimeout(() => {
-      console.log('[SCROLL DEBUG] 1000ms - scrollY:', window.scrollY, 'activeElement:', document.activeElement?.tagName);
-    }, 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   // Check unlock status on mount
@@ -263,6 +252,7 @@ export default function DesignerPage() {
                   title="Black Veterans Project website"
                   loading="lazy"
                   tabIndex={-1}
+                  style={{ pointerEvents: iframesReady ? 'auto' : 'none' }}
                 />
               </div>
             </div>
@@ -292,6 +282,7 @@ export default function DesignerPage() {
                   title="ESBI website"
                   loading="lazy"
                   tabIndex={-1}
+                  style={{ pointerEvents: iframesReady ? 'auto' : 'none' }}
                 />
               </div>
             </div>
