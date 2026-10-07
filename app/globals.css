@@ -201,7 +201,7 @@ body.case-study main {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 100000;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -384,12 +384,18 @@ nav.doors a.active::after {
   }
 
   .nav-toggle {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    top: 16px;
-    right: 16px;
-    z-index: 100001;
-    background: transparent;
+    top: 12px;
+    right: 12px;
+    z-index: 100002;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    pointer-events: auto;
+    touch-action: manipulation;
   }
 
   nav.doors {
