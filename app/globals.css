@@ -187,12 +187,13 @@ main {
 }
 
 /* Allow full-bleed sections on case study pages */
-body.case-study {
+/* Note: .case-study is a div wrapper, not a body class */
+.case-study {
   overflow-x: hidden;
 }
 
-body.case-study .wrap,
-body.case-study main {
+.case-study .wrap,
+.case-study main {
   overflow-x: visible;
   overflow-y: visible;
 }
@@ -2955,77 +2956,77 @@ body.artist-page .wrap {
 }
 
 /* Case study page background */
-body.case-study {
+.case-study {
   background: #f8f7fc;
 }
 
-body.case-study main {
+.case-study main {
   padding-bottom: 0;
   margin-bottom: 0;
 }
 
-body.case-study main.wrap {
+.case-study main.wrap {
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
   overflow-x: visible;
 }
 
 /* Remove gap above cs-explore by pulling into previous section's margin */
-body.case-study .cs-section-block + .cs-explore--brutalist {
+.case-study .cs-section-block + .cs-explore--brutalist {
   margin-top: calc(-1 * var(--space-xl));
   padding-top: var(--space-2xl);
 }
 
-body.case-study .cs-explore--brutalist {
+.case-study .cs-explore--brutalist {
   margin-bottom: 0;
   padding-bottom: var(--space-xl);
 }
 
 
-body.case-study .site-header {
+.case-study .site-header {
   background: #fff;
 }
 
 /* Case study footer - extend green, no gap */
-body.case-study .site-footer {
+.case-study .site-footer {
   background: #10B981;
   border-top: none;
   margin-top: 0;
   padding: var(--space-s) 0;
 }
 
-body.case-study .site-footer .wrap {
+.case-study .site-footer .wrap {
   color: rgba(255, 255, 255, 0.8);
   align-items: flex-end;
   text-align: right;
 }
 
-body.case-study .site-footer .footer-right {
+.case-study .site-footer .footer-right {
   justify-content: flex-end;
   width: 100%;
 }
 
-body.case-study .site-footer .footer-link {
+.case-study .site-footer .footer-link {
   color: rgba(255, 255, 255, 0.8);
   font-size: var(--text-xl);
   font-weight: 500;
 }
 
-body.case-study .site-footer .footer-link:hover {
+.case-study .site-footer .footer-link:hover {
   color: #FFFFFF;
 }
 
 /* Smooth scrolling for case study sections */
-html:has(body.case-study) {
+html:has(.case-study) {
   scroll-behavior: smooth;
 }
 
-body.case-study .cs-detail-hero,
-body.case-study .cs-brutalist-info,
-body.case-study .cs-section-block,
-body.case-study .cs-hero-image,
-body.case-study .cs-image-full,
-body.case-study .cs-image-grid {
+.case-study .cs-detail-hero,
+.case-study .cs-brutalist-info,
+.case-study .cs-section-block,
+.case-study .cs-hero-image,
+.case-study .cs-image-full,
+.case-study .cs-image-grid {
   scroll-margin-top: 80px;
 }
 
@@ -3156,7 +3157,7 @@ body.case-study .cs-image-grid {
 }
 
 /* IPG hero - show top of phone */
-body.case-study-ipg .cs-hero-image img {
+.case-study-ipg .cs-hero-image img {
   object-position: top;
 }
 
@@ -3731,9 +3732,9 @@ body.case-study-ipg .cs-hero-image img {
 }
 
 /* White banner treatment for all case study images */
-body.case-study .cs-image-full,
-body.case-study .cs-hero-image,
-body.case-study .cs-image-grid {
+.case-study .cs-image-full,
+.case-study .cs-hero-image,
+.case-study .cs-image-grid {
   background: #fff;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -3742,18 +3743,18 @@ body.case-study .cs-image-grid {
 
 /* Disable full-bleed on mobile to prevent overflow issues */
 @media (max-width: 600px) {
-  body.case-study .cs-image-full,
-  body.case-study .cs-hero-image,
-  body.case-study .cs-image-grid {
+  .case-study .cs-image-full,
+  .case-study .cs-hero-image,
+  .case-study .cs-image-grid {
     margin-left: calc(-1 * var(--space-m));
     margin-right: calc(-1 * var(--space-m));
     padding: var(--space-m);
   }
 }
 
-body.case-study .cs-image-full img,
-body.case-study .cs-hero-image img,
-body.case-study .cs-image-grid img {
+.case-study .cs-image-full img,
+.case-study .cs-hero-image img,
+.case-study .cs-image-grid img {
   box-shadow: 0 8px 32px rgba(88, 101, 242, 0.12);
   border-radius: 4px;
 }
@@ -3842,7 +3843,7 @@ body.case-study .cs-image-grid img {
   box-sizing: border-box;
 }
 
-body.case-study .cs-embed-full {
+.case-study .cs-embed-full {
   background: transparent;
 }
 
