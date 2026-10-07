@@ -229,25 +229,6 @@ export default function ColophonPage() {
           <LiveGrid />
         </section>
 
-        {/* Cards & Radius */}
-        <section className="col-section">
-          <h2 className="col-heading">Cards & Radius</h2>
-          <div className="radius-demo">
-            <div className="radius-card radius-none">
-              <span className="radius-label">0px</span>
-              <span className="radius-use">Buttons, chips</span>
-            </div>
-            <div className="radius-card radius-small">
-              <span className="radius-label">4px</span>
-              <span className="radius-use">Images, cards</span>
-            </div>
-            <div className="radius-card radius-medium">
-              <span className="radius-label">8px</span>
-              <span className="radius-use">Modals, popups</span>
-            </div>
-          </div>
-        </section>
-
         {/* Effects */}
         <section className="col-section">
           <h2 className="col-heading">Effects</h2>
