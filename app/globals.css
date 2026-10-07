@@ -1346,7 +1346,7 @@ nav.doors a[href="/"] {
   width: 1440px;
   height: 900px;
   transform-origin: top left;
-  transform: scale(0.20);
+  transform: scale(0.35);
   pointer-events: auto;
   cursor: default;
   animation: none;
@@ -1355,21 +1355,21 @@ nav.doors a[href="/"] {
 @media (min-width: 480px) {
   .cs-featured-preview .browser-viewport iframe,
   .browser-viewport-interactive iframe {
-    transform: scale(0.22);
+    transform: scale(0.40);
   }
 }
 
 @media (min-width: 768px) {
   .cs-featured-preview .browser-viewport iframe,
   .browser-viewport-interactive iframe {
-    transform: scale(0.25);
+    transform: scale(0.45);
   }
 }
 
 @media (min-width: 1100px) {
   .cs-featured-preview .browser-viewport iframe,
   .browser-viewport-interactive iframe {
-    transform: scale(0.28);
+    transform: scale(0.50);
   }
 }
 
