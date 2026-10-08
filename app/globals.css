@@ -1574,7 +1574,7 @@ nav.doors a[href="/"] {
 }
 
 .cs-card[href="/case-study/czi"] .cs-card-image .scroll-img {
-  top: -15%;
+  top: -35%;
 }
 
 /* CZI card - mobile */
@@ -1583,7 +1583,7 @@ nav.doors a[href="/"] {
     aspect-ratio: 16 / 7;
   }
   .cs-card[href="/case-study/czi"] .cs-card-image .scroll-img {
-    top: -10%;
+    top: -25%;
   }
 }
 
