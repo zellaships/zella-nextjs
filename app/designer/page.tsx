@@ -75,8 +75,13 @@ export default function DesignerPage() {
     };
 
     const expectedHash = '-dreq7x';
+    const costarHash = 'eqrmz7'; // co-star (case-insensitive)
+    const abridgeHash = '-jpux92'; // abridge (case-insensitive)
+    const notionHash = '-h705nv'; // notion (case-insensitive)
+    const hidanbrownHash = 'umuw5i'; // hidanbrown (case-insensitive)
 
-    if (hashPassword(passwordInput) === expectedHash) {
+    const inputLower = passwordInput.toLowerCase();
+    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === costarHash || hashPassword(inputLower) === abridgeHash || hashPassword(inputLower) === notionHash || hashPassword(inputLower) === hidanbrownHash) {
       // Store unlock with session token
       const sessionToken = generateSessionToken();
       localStorage.setItem('zv_ax', JSON.stringify({ v: 1, t: sessionToken }));
