@@ -1568,23 +1568,9 @@ nav.doors a[href="/"] {
   }
 }
 
-/* CZI card - tighter aspect ratio to reduce whitespace */
-.cs-card[href="/case-study/czi"] .cs-card-image {
-  aspect-ratio: 16 / 8;
-}
-
+/* CZI card - match default aspect ratio */
 .cs-card[href="/case-study/czi"] .cs-card-image .scroll-img {
-  top: -35%;
-}
-
-/* CZI card - mobile */
-@media (max-width: 768px) {
-  .cs-card[href="/case-study/czi"] .cs-card-image {
-    aspect-ratio: 16 / 7;
-  }
-  .cs-card[href="/case-study/czi"] .cs-card-image .scroll-img {
-    top: -25%;
-  }
+  top: -25%;
 }
 
 /* MRU card - shift up to center key info */
