@@ -98,6 +98,13 @@ export default function IPGCaseStudyPage() {
         </section>
 
         <figure className="cs-image-full">
+          <object data="/assets/images/pages/ipg-login-flows.pdf" type="application/pdf" width="100%" height="600">
+            <a href="/assets/images/pages/ipg-login-flows.pdf">View Login Flows PDF</a>
+          </object>
+          <figcaption>Login flow mapping the authentication and approval entry points</figcaption>
+        </figure>
+
+        <figure className="cs-image-full">
           <img src="/assets/images/pages/page-07.jpg" alt="New dashboard design with data visualization and filtering" />
         </figure>
 
