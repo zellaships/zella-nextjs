@@ -81,9 +81,10 @@ export default function DesignerPage() {
     const hidanbrownHash = 'umuw5i'; // hidanbrown (case-insensitive)
     const theblackschoolHash = '-tk5hpa'; // theblackschool (case-insensitive)
     const hione10Hash = 'f9k5no'; // hione10 (case-insensitive)
+    const hiremofirstHash = '1v29ng'; // hi remofirst (case-insensitive)
 
     const inputLower = passwordInput.toLowerCase();
-    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === costarHash || hashPassword(inputLower) === abridgeHash || hashPassword(inputLower) === notionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === theblackschoolHash || hashPassword(inputLower) === hione10Hash) {
+    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === costarHash || hashPassword(inputLower) === abridgeHash || hashPassword(inputLower) === notionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === theblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash) {
       // Store unlock with session token
       const sessionToken = generateSessionToken();
       localStorage.setItem('zv_ax', JSON.stringify({ v: 1, t: sessionToken }));
