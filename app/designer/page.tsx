@@ -75,13 +75,13 @@ export default function DesignerPage() {
     };
 
     const expectedHash = '-dreq7x';
-    const hicostarHash = 'hj5ywk'; // hi co-star (case-insensitive)
-    const hiabridgeHash = '-gxglbp'; // hi abridge (case-insensitive)
-    const hinotionHash = 'ez24wk'; // hi notion (case-insensitive)
+    const hicostarHash = '-tn4ttt'; // hicostar (case-insensitive)
+    const hiabridgeHash = '-v1tdyv'; // hiabridge (case-insensitive)
+    const hinotionHash = '-ofmkbu'; // hinotion (case-insensitive)
     const hidanbrownHash = 'umuw5i'; // hidanbrown (case-insensitive)
-    const hitheblackschoolHash = '7eza5d'; // hi theblackschool (case-insensitive)
+    const hitheblackschoolHash = '5gy92b'; // hitheblackschool (case-insensitive)
     const hione10Hash = 'f9k5no'; // hione10 (case-insensitive)
-    const hiremofirstHash = '1v29ng'; // hi remofirst (case-insensitive)
+    const hiremofirstHash = '-1hzvhi'; // hiremofirst (case-insensitive)
     const himarleyHash = '-p4ej0d'; // himarley (case-insensitive)
 
     const inputLower = passwordInput.toLowerCase();
