@@ -75,17 +75,17 @@ export default function DesignerPage() {
     };
 
     const expectedHash = '-dreq7x';
-    const costarHash = 'eqrmz7'; // co-star (case-insensitive)
-    const abridgeHash = '-jpux92'; // abridge (case-insensitive)
-    const notionHash = '-h705nv'; // notion (case-insensitive)
+    const hicostarHash = 'hj5ywk'; // hi co-star (case-insensitive)
+    const hiabridgeHash = '-gxglbp'; // hi abridge (case-insensitive)
+    const hinotionHash = 'ez24wk'; // hi notion (case-insensitive)
     const hidanbrownHash = 'umuw5i'; // hidanbrown (case-insensitive)
-    const theblackschoolHash = '-tk5hpa'; // theblackschool (case-insensitive)
+    const hitheblackschoolHash = '7eza5d'; // hi theblackschool (case-insensitive)
     const hione10Hash = 'f9k5no'; // hione10 (case-insensitive)
     const hiremofirstHash = '1v29ng'; // hi remofirst (case-insensitive)
     const himarleyHash = '-p4ej0d'; // himarley (case-insensitive)
 
     const inputLower = passwordInput.toLowerCase();
-    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === costarHash || hashPassword(inputLower) === abridgeHash || hashPassword(inputLower) === notionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === theblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === himarleyHash) {
+    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === hicostarHash || hashPassword(inputLower) === hiabridgeHash || hashPassword(inputLower) === hinotionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === hitheblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === himarleyHash) {
       // Store unlock with session token
       const sessionToken = generateSessionToken();
       localStorage.setItem('zv_ax', JSON.stringify({ v: 1, t: sessionToken }));
