@@ -10,14 +10,14 @@ export const metadata: Metadata = {
     title: 'Zella — Artist, Designer, Cultural Organizer',
     description: 'Artist, cultural organizer, and designer whose work spans performance, painting, zines, and portal-making.',
     type: 'website',
-    url: 'https://zella.design/',
-    images: ['https://zella.design/assets/images/og-image.png'],
+    url: 'https://zellavanie.com/',
+    images: ['https://zellavanie.com/assets/images/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Zella — Artist, Designer, Cultural Organizer',
     description: 'Artist, cultural organizer, and designer whose work spans performance, painting, zines, and portal-making.',
-    images: ['https://zella.design/assets/images/og-image.png'],
+    images: ['https://zellavanie.com/assets/images/og-image.png'],
   },
   icons: {
     icon: '/assets/images/zella-logo.png',

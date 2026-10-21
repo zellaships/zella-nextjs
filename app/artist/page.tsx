@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     title: 'Zella — Artist',
     description: 'Artwork spanning performance, painting, zines, and portal-making. Exhibited internationally.',
     type: 'website',
-    url: 'https://zella.design/artist',
+    url: 'https://zellavanie.com/artist',
     images: [
       {
-        url: 'https://zella.design/assets/images/og-image.png',
+        url: 'https://zellavanie.com/assets/images/og-image.png',
         alt: 'Zella Artist',
       },
     ],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Zella — Artist',
     description: 'Artwork spanning performance, painting, zines, and portal-making. Exhibited internationally.',
-    images: ['https://zella.design/assets/images/og-image.png'],
+    images: ['https://zellavanie.com/assets/images/og-image.png'],
   },
 };
 

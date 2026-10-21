@@ -7,14 +7,14 @@ export const metadata: Metadata = {
     title: 'Zella — Designer',
     description: 'Product design, strategy, and leadership work. Case studies from CZI, Black Veterans Project, and more.',
     type: 'website',
-    url: 'https://zella.design/designer.html',
-    images: ['https://zella.design/assets/images/og-image.png'],
+    url: 'https://zellavanie.com/designer',
+    images: ['https://zellavanie.com/assets/images/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Zella — Designer',
     description: 'Product design, strategy, and leadership work. Case studies from CZI, Black Veterans Project, and more.',
-    images: ['https://zella.design/assets/images/og-image.png'],
+    images: ['https://zellavanie.com/assets/images/og-image.png'],
   },
 };
 

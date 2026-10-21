@@ -418,10 +418,10 @@ export const metadata: Metadata = {
     title: 'Chan Zuckerberg Initiative Case Study — Zella',
     description: 'Designing digital tools to empower educators and students with data-driven insights.',
     type: 'article',
-    url: 'https://zella.design/case-study/czi',
+    url: 'https://zellavanie.com/case-study/czi',
     images: [
       {
-        url: 'https://zella.design/assets/images/og-image.png',
+        url: 'https://zellavanie.com/assets/images/og-image.png',
       },
     ],
   },
@@ -429,6 +429,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Chan Zuckerberg Initiative Case Study — Zella',
     description: 'Designing digital tools to empower educators and students with data-driven insights.',
-    images: ['https://zella.design/assets/images/og-image.png'],
+    images: ['https://zellavanie.com/assets/images/og-image.png'],
   },
 };
