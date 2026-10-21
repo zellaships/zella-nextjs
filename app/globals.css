@@ -1539,19 +1539,19 @@ nav.doors a[href="/"] {
   }
 
   /* CZI mobile - show dashboard content, skip header whitespace */
-  .cs-card[href="case-study-czi.html"] .scroll-img {
+  .cs-card[href="/case-study/czi"] .scroll-img {
     object-position: left 18%;
   }
 
   /* IPG mobile - center phone in view */
-  .cs-card[href="case-study-ipg.html"] .scroll-img {
+  .cs-card[href="/case-study/ipg"] .scroll-img {
     object-fit: contain;
     object-position: center center;
   }
 }
 
 /* CZI card - start below header whitespace, scroll to show dashboard */
-.cs-card[href="case-study-czi.html"] .scroll-img {
+.cs-card[href="/case-study/czi"] .scroll-img {
   animation-name: card-scroll-czi;
   transform: translateY(-35%);
 }
@@ -1566,11 +1566,6 @@ nav.doors a[href="/"] {
   95%, 100% {
     transform: translateY(-35%);
   }
-}
-
-/* CZI card - match default aspect ratio */
-.cs-card[href="/case-study/czi"] .cs-card-image .scroll-img {
-  top: -25%;
 }
 
 /* MRU card - shift up to center key info */
