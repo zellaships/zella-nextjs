@@ -88,9 +88,10 @@ export default function DesignerPage() {
     const hifanaticsHash = 'h8h4r8'; // hifanatics (case-insensitive)
     const hipanormaHash = '-oibyvh'; // hipanorma (case-insensitive)
     const higoogleHash = '-rr15l2'; // higoogle (case-insensitive)
+    const hifunctionhealthHash = 'qgv6np'; // hifunctionhealth (case-insensitive)
 
     const inputLower = passwordInput.toLowerCase();
-    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === hicostarHash || hashPassword(inputLower) === hiabridgeHash || hashPassword(inputLower) === hinotionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === hitheblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === himarleyHash || hashPassword(inputLower) === hietsyHash || hashPassword(inputLower) === hifanaticsHash || hashPassword(inputLower) === hipanormaHash || hashPassword(inputLower) === higoogleHash) {
+    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === hicostarHash || hashPassword(inputLower) === hiabridgeHash || hashPassword(inputLower) === hinotionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === hitheblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === himarleyHash || hashPassword(inputLower) === hietsyHash || hashPassword(inputLower) === hifanaticsHash || hashPassword(inputLower) === hipanormaHash || hashPassword(inputLower) === higoogleHash || hashPassword(inputLower) === hifunctionhealthHash) {
       // Track successful unlock
       track('portfolio_password_success', { password: inputLower });
 
