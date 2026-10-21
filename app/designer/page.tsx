@@ -7,6 +7,7 @@ import { Footer } from '@/components/layout/Footer';
 import { SkipLink } from '@/components/layout/SkipLink';
 import { Navigation } from '@/components/layout/Navigation';
 import { TextGlowEffect } from '@/components/effects/TextGlowEffect';
+import { track } from '@vercel/analytics';
 
 export default function DesignerPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
@@ -89,6 +90,9 @@ export default function DesignerPage() {
 
     const inputLower = passwordInput.toLowerCase();
     if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === hicostarHash || hashPassword(inputLower) === hiabridgeHash || hashPassword(inputLower) === hinotionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === hitheblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === himarleyHash || hashPassword(inputLower) === hietsyHash || hashPassword(inputLower) === hifanaticsHash || hashPassword(inputLower) === hipanormaHash) {
+      // Track successful unlock
+      track('portfolio_password_success', { password: inputLower });
+
       // Store unlock with session token
       const sessionToken = generateSessionToken();
       localStorage.setItem('zv_ax', JSON.stringify({ v: 1, t: sessionToken }));
@@ -101,6 +105,9 @@ export default function DesignerPage() {
         setFormState('idle');
       }, 600);
     } else {
+      // Track failed attempt
+      track('portfolio_password_fail', { attempted: inputLower });
+
       setFormState('error');
       setPasswordInput('');
       setTimeout(() => setFormState('idle'), 1600);

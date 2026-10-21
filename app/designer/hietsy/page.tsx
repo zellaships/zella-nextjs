@@ -2,11 +2,15 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { track } from '@vercel/analytics';
 
 export default function HietsyUnlockPage() {
   const router = useRouter();
 
   useEffect(() => {
+    // Track URL unlock access
+    track('portfolio_url_unlock', { source: 'hietsy' });
+
     // Generate session token (same logic as main designer page)
     const generateSessionToken = () => {
       const hashString = (s: string) => {
