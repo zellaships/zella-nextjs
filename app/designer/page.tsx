@@ -85,9 +85,10 @@ export default function DesignerPage() {
     const himarleyHash = '-p4ej0d'; // himarley (case-insensitive)
     const hietsyHash = '-k4u04q'; // hietsy (case-insensitive)
     const hifanaticsHash = 'h8h4r8'; // hifanatics (case-insensitive)
+    const hipanormaHash = '-oibyvh'; // hipanorma (case-insensitive)
 
     const inputLower = passwordInput.toLowerCase();
-    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === hicostarHash || hashPassword(inputLower) === hiabridgeHash || hashPassword(inputLower) === hinotionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === hitheblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === himarleyHash || hashPassword(inputLower) === hietsyHash || hashPassword(inputLower) === hifanaticsHash) {
+    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === hicostarHash || hashPassword(inputLower) === hiabridgeHash || hashPassword(inputLower) === hinotionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === hitheblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === himarleyHash || hashPassword(inputLower) === hietsyHash || hashPassword(inputLower) === hifanaticsHash || hashPassword(inputLower) === hipanormaHash) {
       // Store unlock with session token
       const sessionToken = generateSessionToken();
       localStorage.setItem('zv_ax', JSON.stringify({ v: 1, t: sessionToken }));
