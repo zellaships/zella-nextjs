@@ -83,9 +83,10 @@ export default function DesignerPage() {
     const hione10Hash = 'f9k5no'; // hione10 (case-insensitive)
     const hiremofirstHash = '-1hzvhi'; // hiremofirst (case-insensitive)
     const himarleyHash = '-p4ej0d'; // himarley (case-insensitive)
+    const hietsyHash = '-k4u04q'; // hietsy (case-insensitive)
 
     const inputLower = passwordInput.toLowerCase();
-    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === hicostarHash || hashPassword(inputLower) === hiabridgeHash || hashPassword(inputLower) === hinotionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === hitheblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === himarleyHash) {
+    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === hicostarHash || hashPassword(inputLower) === hiabridgeHash || hashPassword(inputLower) === hinotionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === hitheblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === himarleyHash || hashPassword(inputLower) === hietsyHash) {
       // Store unlock with session token
       const sessionToken = generateSessionToken();
       localStorage.setItem('zv_ax', JSON.stringify({ v: 1, t: sessionToken }));
