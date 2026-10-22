@@ -94,9 +94,10 @@ export default function DesignerPage() {
     const hireboltHash = '-mp9e2f'; // hirebolt (case-insensitive)
     const hiservicenowHash = '-enq6v2'; // hiservicenow (case-insensitive)
     const hilaithHash = 'f7olnr'; // hilaith (case-insensitive)
+    const hichessHash = 'f2uu8v'; // hichess (case-insensitive)
 
     const inputLower = passwordInput.toLowerCase();
-    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === hicostarHash || hashPassword(inputLower) === hiabridgeHash || hashPassword(inputLower) === hinotionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === hitheblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === himarleyHash || hashPassword(inputLower) === hietsyHash || hashPassword(inputLower) === hifanaticsHash || hashPassword(inputLower) === hipanormaHash || hashPassword(inputLower) === higoogleHash || hashPassword(inputLower) === hifunctionhealthHash || hashPassword(inputLower) === hidiscoveryHash || hashPassword(inputLower) === hishibuyaHash || hashPassword(inputLower) === hireboltHash || hashPassword(inputLower) === hiservicenowHash || hashPassword(inputLower) === hilaithHash) {
+    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === hicostarHash || hashPassword(inputLower) === hiabridgeHash || hashPassword(inputLower) === hinotionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === hitheblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === himarleyHash || hashPassword(inputLower) === hietsyHash || hashPassword(inputLower) === hifanaticsHash || hashPassword(inputLower) === hipanormaHash || hashPassword(inputLower) === higoogleHash || hashPassword(inputLower) === hifunctionhealthHash || hashPassword(inputLower) === hidiscoveryHash || hashPassword(inputLower) === hishibuyaHash || hashPassword(inputLower) === hireboltHash || hashPassword(inputLower) === hiservicenowHash || hashPassword(inputLower) === hilaithHash || hashPassword(inputLower) === hichessHash) {
       // Track successful unlock
       track('portfolio_password_success', { password: inputLower });
 
