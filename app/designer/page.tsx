@@ -83,7 +83,6 @@ export default function DesignerPage() {
     const hitheblackschoolHash = '5gy92b'; // hitheblackschool (case-insensitive)
     const hione10Hash = 'f9k5no'; // hione10 (case-insensitive)
     const hiremofirstHash = '-1hzvhi'; // hiremofirst (case-insensitive)
-    const himarleyHash = '-p4ej0d'; // himarley (case-insensitive)
     const hietsyHash = '-k4u04q'; // hietsy (case-insensitive)
     const hifanaticsHash = 'h8h4r8'; // hifanatics (case-insensitive)
     const hipanormaHash = '-oibyvh'; // hipanorma (case-insensitive)
@@ -101,9 +100,10 @@ export default function DesignerPage() {
     const hilaunchpointHash = '31kpo'; // hilaunchpoint (case-insensitive)
     const histripeHash = '-lzorci'; // histripe (case-insensitive)
     const hiveritasHash = '-5isg9t'; // hiveritas (case-insensitive)
+    const hiheartshareHash = '-oxt61y'; // hiheartshare (case-insensitive)
 
     const inputLower = passwordInput.toLowerCase();
-    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === hicostarHash || hashPassword(inputLower) === hiabridgeHash || hashPassword(inputLower) === hinotionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === hitheblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === himarleyHash || hashPassword(inputLower) === hietsyHash || hashPassword(inputLower) === hifanaticsHash || hashPassword(inputLower) === hipanormaHash || hashPassword(inputLower) === higoogleHash || hashPassword(inputLower) === hifunctionhealthHash || hashPassword(inputLower) === hidiscoveryHash || hashPassword(inputLower) === hishibuyaHash || hashPassword(inputLower) === hireboltHash || hashPassword(inputLower) === hiservicenowHash || hashPassword(inputLower) === hilaithHash || hashPassword(inputLower) === hichessHash || hashPassword(inputLower) === hichessDotComHash || hashPassword(inputLower) === hiwonderHash || hashPassword(inputLower) === hitoastHash || hashPassword(inputLower) === hilaunchpointHash || hashPassword(inputLower) === histripeHash || hashPassword(inputLower) === hiveritasHash) {
+    if (hashPassword(passwordInput) === expectedHash || hashPassword(inputLower) === hicostarHash || hashPassword(inputLower) === hiabridgeHash || hashPassword(inputLower) === hinotionHash || hashPassword(inputLower) === hidanbrownHash || hashPassword(inputLower) === hitheblackschoolHash || hashPassword(inputLower) === hione10Hash || hashPassword(inputLower) === hiremofirstHash || hashPassword(inputLower) === hietsyHash || hashPassword(inputLower) === hifanaticsHash || hashPassword(inputLower) === hipanormaHash || hashPassword(inputLower) === higoogleHash || hashPassword(inputLower) === hifunctionhealthHash || hashPassword(inputLower) === hidiscoveryHash || hashPassword(inputLower) === hishibuyaHash || hashPassword(inputLower) === hireboltHash || hashPassword(inputLower) === hiservicenowHash || hashPassword(inputLower) === hilaithHash || hashPassword(inputLower) === hichessHash || hashPassword(inputLower) === hichessDotComHash || hashPassword(inputLower) === hiwonderHash || hashPassword(inputLower) === hitoastHash || hashPassword(inputLower) === hilaunchpointHash || hashPassword(inputLower) === histripeHash || hashPassword(inputLower) === hiveritasHash || hashPassword(inputLower) === hiheartshareHash) {
       // Track successful unlock
       track('portfolio_password_success', { password: inputLower });
 
